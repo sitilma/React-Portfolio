@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Folder from "./Folder";
 
 const CODES = [
   {
@@ -15,7 +16,12 @@ const CODES = [
 class App extends Component {
   render() {
     console.log(CODES[0].id);
-    return <div className="App">{CODES[1].body}</div>;
+    return (
+      <div className="App">
+        <Folder id={"skill"} />
+        <Folder id={"work"} />
+      </div>
+    );
   }
 }
 
