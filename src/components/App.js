@@ -1,6 +1,66 @@
 import React, { Component } from "react";
 import "./App.css";
-import Folder from "./Folder";
+import File from "./File";
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      codeName: "default"
+    };
+  }
+  childFunc(code) {
+    this.setState({
+      codeName: code
+    });
+  }
+  code() {
+    switch (this.state.codeName) {
+      case "ruby.rb":
+        return CODES[0].body;
+      default:
+        break;
+    }
+  }
+  render() {
+    return (
+      <div className="App">
+        <div className="flex">
+          <div className="left-container">
+            <ul id="skill">
+              {SKILL.map(item => {
+                return (
+                  <li key={item.name}>
+                    <File
+                      name={item.name}
+                      onFileClick={() => {
+                        this.childFunc(item.name);
+                      }}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+            <ul id="work">
+              {WORK.map(item => {
+                return (
+                  <li key={item.name}>
+                    <File
+                      name={item.name}
+                      onFileClick={() => {
+                        this.childFunc(item.name);
+                      }}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="light-container">{this.state.codeName}</div>
+        </div>
+      </div>
+    );
+  }
+}
 
 const CODES = [
   {
@@ -13,16 +73,17 @@ const CODES = [
   }
 ];
 
-class App extends Component {
-  render() {
-    console.log(CODES[0].id);
-    return (
-      <div className="App">
-        <Folder id={"skill"} />
-        <Folder id={"work"} />
-      </div>
-    );
-  }
-}
+const SKILL = [
+  { name: "ruby" },
+  { name: "php" },
+  { name: "javascript" },
+  { name: "docker" }
+];
 
+const WORK = [
+  { name: "igo" },
+  { name: "markdown" },
+  { name: "portfolio" },
+  { name: "laravel" }
+];
 export default App;

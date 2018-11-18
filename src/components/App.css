@@ -1,0 +1,29 @@
+.App {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 1200px;
+  height: 700px;
+  background: rgba(38, 38, 38, 0.92);
+  border: 1px solid #555;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid #000;
+  overflow: hidden;
+}
+
+.left-container {
+  border: 0 dashed #414344;
+  border-width: 0 1px 0 0;
+  width: 180px;
+  height: 627px;
+  padding: 5px;
+}
