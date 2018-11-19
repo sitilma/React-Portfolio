@@ -27,3 +27,41 @@
   height: 627px;
   padding: 5px;
 }
+
+.light-container {
+  display: flex;
+}
+
+.folder {
+  color: #e0bc7a;
+  cursor: pointer;
+  user-select: none;
+  margin-left: 10px;
+}
+
+.folder span {
+  margin-left: 8px;
+}
+
+.folderParent > .file {
+  cursor: pointer;
+  user-select: none;
+  margin-left: 25px;
+}
+
+.file {
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+  margin-left: 10px;
+}
+
+.folder:hover {
+  background-color: #000;
+  opacity: 0.8;
+}
+
+.file:hover {
+  background-color: #000;
+  opacity: 0.8;
+}
