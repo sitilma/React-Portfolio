@@ -5,7 +5,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      codeName: "default"
+      codeName: "default",
+      actives: ["deafult"]
     };
   }
   childFunc(code) {
@@ -55,7 +56,13 @@ class App extends Component {
               })}
             </ul>
           </div>
-          <div className="light-container">{this.state.codeName}</div>
+          <div className="light-container">
+            {CODES.map(code => {
+              if (code.id === this.state.codeName) {
+                return code.body;
+              }
+            })}
+          </div>
         </div>
       </div>
     );
@@ -64,12 +71,12 @@ class App extends Component {
 
 const CODES = [
   {
-    id: "ruby.rb",
-    body: <p className="aaa">aaa</p>
+    id: "ruby",
+    body: <h1 className="aaa">Ruby</h1>
   },
   {
-    id: "php.php",
-    body: <p className="aaa">aaa</p>
+    id: "php",
+    body: <h1 className="PHP">PHP</h1>
   }
 ];
 
