@@ -4,14 +4,24 @@ import { Codes } from "./Codes";
 
 function Code(props) {
   return (
-    <div>
+    <React.Fragment>
       {Codes.map(code => {
         if (code.id === props.state) {
-          return code.body;
+          const Number = Array.from(Array(code.number + 1).keys());
+          return (
+            <React.Fragment key={props.state}>
+              <ul className="number">
+                {Number.map(number => {
+                  return <li key={number}>{number}</li>;
+                })}
+              </ul>
+              {code.body}
+            </React.Fragment>
+          );
         }
         return null;
       })}
-    </div>
+    </React.Fragment>
   );
 }
 

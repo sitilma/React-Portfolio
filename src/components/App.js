@@ -6,8 +6,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      codeName: "default",
-      actives: ["deafult"]
+      codeName: "readme",
+      actives: ["readme"]
     };
   }
   childFunc(code) {
@@ -51,6 +51,12 @@ class App extends Component {
                 );
               })}
             </ul>
+            <File
+              name={"readme"}
+              onFileClick={() => {
+                this.childFunc("readme");
+              }}
+            />
           </div>
           <div className="light-container">
             <Code state={this.state.codeName} />

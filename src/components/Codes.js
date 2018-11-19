@@ -3,72 +3,91 @@ import React from "react";
 export const Codes = [
   {
     id: "ruby",
+    number: 4,
     body: (
-      <div className="ruby" key={"ruby"}>
-        <h1>ruby</h1>
+      <div className="code" key={"ruby"}>
+        <p>ruby</p>
+        <br />
         <p>hoge</p>
       </div>
     )
   },
   {
     id: "php",
+    number: 4,
     body: (
-      <div className="php" key={"php"}>
-        <h1>php</h1>
+      <div className="code" key={"php"}>
+        <p>php</p>
         <p>hoge</p>
       </div>
     )
   },
   {
     id: "javascript",
+    number: 4,
     body: (
-      <div className="javascript" key={"javascript"}>
-        <h1>javascript</h1>
+      <div className="code" key={"javascript"}>
+        <p>javascript</p>
         <p>hoge</p>
       </div>
     )
   },
   {
     id: "docker",
+    number: 4,
     body: (
-      <div className="docker" key={"docker"}>
-        <h1>docker</h1>
+      <div className="code" key={"docker"}>
+        <p>docker</p>
         <p>hoge</p>
       </div>
     )
   },
   {
     id: "igo",
+    number: 4,
     body: (
-      <div className="igo" key={"igo"}>
-        <h1>igo</h1>
+      <div className="code" key={"igo"}>
+        <p>igo</p>
         <p>hoge</p>
       </div>
     )
   },
   {
     id: "markdown",
+    number: 4,
     body: (
-      <div className="markdown" key={"markdown"}>
-        <h1>markdown</h1>
+      <div className="code" key={"markdown"}>
+        <p>markdown</p>
         <p>hoge</p>
       </div>
     )
   },
   {
     id: "portfolio",
+    number: 4,
     body: (
-      <div className="portfolio" key={"portfolio"}>
-        <h1>portfolio</h1>
+      <div className="code" key={"portfolio"}>
+        <p>portfolio</p>
         <p>hoge</p>
       </div>
     )
   },
   {
     id: "laravel",
+    number: 4,
     body: (
-      <div className="laravel" key={"laravel"}>
-        <h1>laravel</h1>
+      <div className="code" key={"laravel"}>
+        <p>laravel</p>
+        <p>hoge</p>
+      </div>
+    )
+  },
+  {
+    id: "readme",
+    number: 4,
+    body: (
+      <div className="code" key={"readme"}>
+        <p>readme</p>
         <p>hoge</p>
       </div>
     )
