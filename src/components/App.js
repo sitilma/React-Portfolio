@@ -78,7 +78,7 @@ class App extends Component {
             <File
               name={"README"}
               onFileClick={() => {
-                this.childFunc("readme");
+                this.childFunc("README");
               }}
             />
           </div>
