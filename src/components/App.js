@@ -6,8 +6,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      codeName: "readme",
-      actives: ["readme"]
+      codeName: "README",
+      actives: ["README"]
     };
   }
   childFunc(code) {
@@ -15,44 +15,68 @@ class App extends Component {
       codeName: code
     });
   }
+  skillDropdown() {
+    let skillElement = document.getElementById("skillFolder");
+    let skillFolderElemtnt = document.getElementById("skillFolderIcon");
+    skillElement.classList.toggle("none");
+    skillFolderElemtnt.classList.toggle("fa-folder-open");
+    skillFolderElemtnt.classList.toggle("fa-folder");
+  }
+  workDropdown() {
+    let workElement = document.getElementById("workFolder");
+    let workFolderElemtnt = document.getElementById("workFolderIcon");
+    workElement.classList.toggle("none");
+    workFolderElemtnt.classList.toggle("fa-folder-open");
+    workFolderElemtnt.classList.toggle("fa-folder");
+  }
 
   render() {
     return (
       <div className="App">
         <div className="flex">
           <div className="left-container">
-            <ul id="skill">
-              skill
-              {SKILL.map(item => {
-                return (
-                  <li key={item.name}>
-                    <File
-                      name={item.name}
-                      onFileClick={() => {
-                        this.childFunc(item.name);
-                      }}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
-            <ul id="work">
-              work
-              {WORK.map(item => {
-                return (
-                  <li key={item.name}>
-                    <File
-                      name={item.name}
-                      onFileClick={() => {
-                        this.childFunc(item.name);
-                      }}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
+            <div id="skill">
+              <div className={"folder"} onClick={this.skillDropdown}>
+                <i id={"skillFolderIcon"} className="fas fa-folder-open" />
+                <span>Skill</span>
+              </div>
+              <div id={"skillFolder"} className={"folderParent"}>
+                {SKILL.map(item => {
+                  return (
+                    <React.Fragment key={item.name}>
+                      <File
+                        name={item.name}
+                        onFileClick={() => {
+                          this.childFunc(item.name);
+                        }}
+                      />
+                    </React.Fragment>
+                  );
+                })}
+              </div>
+            </div>
+            <div id="work">
+              <div className={"folder"} onClick={this.workDropdown}>
+                <i id={"workFolderIcon"} className="fas fa-folder-open" />
+                <span>Works</span>
+              </div>
+              <div id={"workFolder"} className={"folderParent"}>
+                {WORK.map(item => {
+                  return (
+                    <React.Fragment key={item.name}>
+                      <File
+                        name={item.name}
+                        onFileClick={() => {
+                          this.childFunc(item.name);
+                        }}
+                      />
+                    </React.Fragment>
+                  );
+                })}
+              </div>
+            </div>
             <File
-              name={"readme"}
+              name={"README"}
               onFileClick={() => {
                 this.childFunc("readme");
               }}
@@ -67,16 +91,16 @@ class App extends Component {
   }
 }
 const SKILL = [
-  { name: "ruby" },
-  { name: "php" },
-  { name: "javascript" },
-  { name: "docker" }
+  { name: "Ruby" },
+  { name: "PHP" },
+  { name: "JavaScript" },
+  { name: "Docker" }
 ];
 
 const WORK = [
   { name: "igo" },
-  { name: "markdown" },
-  { name: "portfolio" },
-  { name: "laravel" }
+  { name: "Markdown" },
+  { name: "Portfolio" },
+  { name: "Laravel" }
 ];
 export default App;

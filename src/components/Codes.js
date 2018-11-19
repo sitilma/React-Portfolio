@@ -2,10 +2,10 @@ import React from "react";
 
 export const Codes = [
   {
-    id: "ruby",
+    id: "Ruby",
     number: 4,
     body: (
-      <div className="code" key={"ruby"}>
+      <div className="code" key={"Ruby"}>
         <p>ruby</p>
         <br />
         <p>hoge</p>
@@ -13,30 +13,30 @@ export const Codes = [
     )
   },
   {
-    id: "php",
+    id: "PHP",
     number: 4,
     body: (
-      <div className="code" key={"php"}>
+      <div className="code" key={"PHP"}>
         <p>php</p>
         <p>hoge</p>
       </div>
     )
   },
   {
-    id: "javascript",
+    id: "JavaScript",
     number: 4,
     body: (
-      <div className="code" key={"javascript"}>
+      <div className="code" key={"JavaScript"}>
         <p>javascript</p>
         <p>hoge</p>
       </div>
     )
   },
   {
-    id: "docker",
+    id: "Docker",
     number: 4,
     body: (
-      <div className="code" key={"docker"}>
+      <div className="code" key={"Docker"}>
         <p>docker</p>
         <p>hoge</p>
       </div>
@@ -53,40 +53,40 @@ export const Codes = [
     )
   },
   {
-    id: "markdown",
+    id: "Markdown",
     number: 4,
     body: (
-      <div className="code" key={"markdown"}>
+      <div className="code" key={"Markdown"}>
         <p>markdown</p>
         <p>hoge</p>
       </div>
     )
   },
   {
-    id: "portfolio",
+    id: "Portfolio",
     number: 4,
     body: (
-      <div className="code" key={"portfolio"}>
+      <div className="code" key={"Portfolio"}>
         <p>portfolio</p>
         <p>hoge</p>
       </div>
     )
   },
   {
-    id: "laravel",
+    id: "Laravel",
     number: 4,
     body: (
-      <div className="code" key={"laravel"}>
+      <div className="code" key={"Laravel"}>
         <p>laravel</p>
         <p>hoge</p>
       </div>
     )
   },
   {
-    id: "readme",
+    id: "README",
     number: 4,
     body: (
-      <div className="code" key={"readme"}>
+      <div className="code" key={"README"}>
         <p>readme</p>
         <p>hoge</p>
       </div>

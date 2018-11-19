@@ -1,0 +1,76 @@
+.file {
+  color: #f7f7f7;
+  line-height: 21px;
+}
+
+.Ruby {
+  width: 20px;
+  height: 15px;
+  background: url("./images/ruby.svg");
+  background-size: 20px 15px;
+  margin: 3px 5px 3px 0;
+}
+
+.PHP {
+  width: 20px;
+  height: 15px;
+  background: url("./images/php.svg");
+  background-size: 20px 15px;
+  margin: 3px 5px 3px 0;
+}
+
+.JavaScript {
+  width: 20px;
+  height: 15px;
+  background: url("./images/javascript.svg");
+  background-size: 20px 15px;
+  margin: 3px 5px 3px 0;
+}
+
+.Docker {
+  width: 20px;
+  height: 15px;
+  background: url("./images/docker.svg");
+  background-size: 20px 15px;
+  margin: 3px 5px 3px 0;
+}
+
+.igo {
+  width: 20px;
+  height: 15px;
+  background: url("./images/rails.svg");
+  background-size: 20px 15px;
+  margin: 3px 5px 3px 0;
+}
+
+.Markdown {
+  width: 20px;
+  height: 15px;
+  background: url("./images/docker.svg");
+  background-size: 20px 15px;
+  margin: 3px 5px 3px 0;
+}
+
+.Portfolio {
+  width: 20px;
+  height: 15px;
+  background: url("./images/react.svg");
+  background-size: 20px 15px;
+  margin: 3px 5px 3px 0;
+}
+
+.Laravel {
+  width: 20px;
+  height: 15px;
+  background: url("./images/laravel.svg");
+  background-size: 20px 15px;
+  margin: 3px 5px 3px 0;
+}
+
+.README {
+  width: 20px;
+  height: 15px;
+  background: url("./images/markdown.svg");
+  background-size: 20px 15px;
+  margin: 3px 5px 3px 0;
+}
