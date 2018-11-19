@@ -27,3 +27,7 @@
   height: 627px;
   padding: 5px;
 }
+
+.light-container {
+  display: flex;
+}

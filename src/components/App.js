@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import File from "./File";
+import Code from "./Code";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -14,20 +15,14 @@ class App extends Component {
       codeName: code
     });
   }
-  code() {
-    switch (this.state.codeName) {
-      case "ruby.rb":
-        return CODES[0].body;
-      default:
-        break;
-    }
-  }
+
   render() {
     return (
       <div className="App">
         <div className="flex">
           <div className="left-container">
             <ul id="skill">
+              skill
               {SKILL.map(item => {
                 return (
                   <li key={item.name}>
@@ -42,6 +37,7 @@ class App extends Component {
               })}
             </ul>
             <ul id="work">
+              work
               {WORK.map(item => {
                 return (
                   <li key={item.name}>
@@ -57,29 +53,13 @@ class App extends Component {
             </ul>
           </div>
           <div className="light-container">
-            {CODES.map(code => {
-              if (code.id === this.state.codeName) {
-                return code.body;
-              }
-            })}
+            <Code state={this.state.codeName} />
           </div>
         </div>
       </div>
     );
   }
 }
-
-const CODES = [
-  {
-    id: "ruby",
-    body: <h1 className="aaa">Ruby</h1>
-  },
-  {
-    id: "php",
-    body: <h1 className="PHP">PHP</h1>
-  }
-];
-
 const SKILL = [
   { name: "ruby" },
   { name: "php" },
