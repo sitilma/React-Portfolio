@@ -5,38 +5,54 @@
   bottom: 0;
   left: 0;
   margin: auto;
-  width: 1200px;
-  height: 700px;
+  height: 100%;
   background: rgba(38, 38, 38, 0.92);
   border: 1px solid #555;
-  border-radius: 5px;
   overflow: hidden;
 }
 
 .flex {
+  height: 100%;
   display: flex;
-  flex-wrap: wrap;
-  border: 3px solid #000;
-  overflow: hidden;
 }
 
 .left-container {
+  background-color: #222323;
   border: 0 dashed #414344;
   border-width: 0 1px 0 0;
-  width: 180px;
-  height: 627px;
-  padding: 5px;
+  height: 100%;
+  min-width: 250px;
 }
 
 .light-container {
+  width: auto;
+  background-color: #090a0a;
+  flex-basis: 10000px;
   display: flex;
+}
+
+.exproler {
+  color: white;
+  padding: 10px;
+  font-size: 12px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+#portfolio {
+  background: #414242;
+  color: white;
+  padding: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .folder {
   color: #e0bc7a;
   cursor: pointer;
   user-select: none;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .folder span {
@@ -46,14 +62,14 @@
 .folderParent > .file {
   cursor: pointer;
   user-select: none;
-  margin-left: 25px;
+  margin-left: 35px;
 }
 
 .file {
   display: flex;
   cursor: pointer;
   user-select: none;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .folder:hover {

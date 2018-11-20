@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import File from "./File";
-import Code from "./Code";
+import File from "./File/File";
+import Code from "./Code/Code";
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      skillfolder: true,
+      workfolder: true,
       codeName: "README",
       actives: ["README"]
     };
@@ -15,19 +17,27 @@ class App extends Component {
       codeName: code
     });
   }
+  portfolioDropdown() {
+    let portfolioElement = document.getElementById("portfolioContainer");
+    let portfoliotextElement = document.getElementById("portfolio");
+    portfolioElement.classList.toggle("none");
+    if ((portfoliotextElement.textContent = "▾MY PORTFOLIO")) {
+      portfoliotextElement.textContent = "▸MY PORTFOLIO";
+    } else {
+      portfoliotextElement.textContent = "▾MY PORTFOLIO";
+    }
+  }
   skillDropdown() {
     let skillElement = document.getElementById("skillFolder");
     let skillFolderElemtnt = document.getElementById("skillFolderIcon");
     skillElement.classList.toggle("none");
     skillFolderElemtnt.classList.toggle("fa-folder-open");
-    skillFolderElemtnt.classList.toggle("fa-folder");
   }
   workDropdown() {
     let workElement = document.getElementById("workFolder");
     let workFolderElemtnt = document.getElementById("workFolderIcon");
     workElement.classList.toggle("none");
     workFolderElemtnt.classList.toggle("fa-folder-open");
-    workFolderElemtnt.classList.toggle("fa-folder");
   }
 
   render() {
@@ -35,52 +45,64 @@ class App extends Component {
       <div className="App">
         <div className="flex">
           <div className="left-container">
-            <div id="skill">
-              <div className={"folder"} onClick={this.skillDropdown}>
-                <i id={"skillFolderIcon"} className="fas fa-folder-open" />
-                <span>Skill</span>
-              </div>
-              <div id={"skillFolder"} className={"folderParent"}>
-                {SKILL.map(item => {
-                  return (
-                    <React.Fragment key={item.name}>
-                      <File
-                        name={item.name}
-                        onFileClick={() => {
-                          this.childFunc(item.name);
-                        }}
-                      />
-                    </React.Fragment>
-                  );
-                })}
-              </div>
+            <div className={"exproler"}>EXPLORER</div>
+            <div id={"portfolio"} onClick={this.portfolioDropdown}>
+              ▸MY PORTFOLIO
             </div>
-            <div id="work">
-              <div className={"folder"} onClick={this.workDropdown}>
-                <i id={"workFolderIcon"} className="fas fa-folder-open" />
-                <span>Works</span>
+            <div id={"portfolioContainer"}>
+              <div id="skill">
+                <div className={"folder"} onClick={this.skillDropdown}>
+                  <i
+                    id={"skillFolderIcon"}
+                    className="fas fa-folder-open fa-folder"
+                  />
+                  <span>Skill</span>
+                </div>
+                <div id={"skillFolder"} className={"folderParent"}>
+                  {SKILL.map(skill => {
+                    return (
+                      <React.Fragment key={skill.name}>
+                        <File
+                          name={skill.name}
+                          onFileClick={() => {
+                            this.childFunc(skill.name);
+                          }}
+                        />
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
               </div>
-              <div id={"workFolder"} className={"folderParent"}>
-                {WORK.map(item => {
-                  return (
-                    <React.Fragment key={item.name}>
-                      <File
-                        name={item.name}
-                        onFileClick={() => {
-                          this.childFunc(item.name);
-                        }}
-                      />
-                    </React.Fragment>
-                  );
-                })}
+              <div id="work">
+                <div className={"folder"} onClick={this.workDropdown}>
+                  <i
+                    id={"workFolderIcon"}
+                    className="fas fa-folder-open fa-folder"
+                  />
+                  <span>Works</span>
+                </div>
+                <div id={"workFolder"} className={"folderParent"}>
+                  {WORKS.map(work => {
+                    return (
+                      <React.Fragment key={work.name}>
+                        <File
+                          name={work.name}
+                          onFileClick={() => {
+                            this.childFunc(work.name);
+                          }}
+                        />
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
               </div>
+              <File
+                name={"README"}
+                onFileClick={() => {
+                  this.childFunc("README");
+                }}
+              />
             </div>
-            <File
-              name={"README"}
-              onFileClick={() => {
-                this.childFunc("README");
-              }}
-            />
           </div>
           <div className="light-container">
             <Code state={this.state.codeName} />
@@ -97,7 +119,7 @@ const SKILL = [
   { name: "Docker" }
 ];
 
-const WORK = [
+const WORKS = [
   { name: "igo" },
   { name: "Markdown" },
   { name: "Portfolio" },
