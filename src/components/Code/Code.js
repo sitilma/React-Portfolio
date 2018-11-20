@@ -6,7 +6,7 @@ function Code(props) {
   return (
     <React.Fragment>
       {Codes.map(code => {
-        if (code.id === props.state) {
+        if (code.id === props.state.lang) {
           const Number = Array.from(Array(code.number + 1).keys());
           return (
             <React.Fragment key={props.state}>

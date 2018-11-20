@@ -1,22 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
+import { connect } from "react-redux";
+import { changeLangState } from "../actions";
+import Folder from "./Folder/Folder";
 import File from "./File/File";
 import Code from "./Code/Code";
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      skillfolder: true,
-      workfolder: true,
-      codeName: "README",
-      actives: ["README"]
-    };
-  }
-  childFunc(code) {
-    this.setState({
-      codeName: code
-    });
-  }
   portfolioDropdown() {
     let portfolioElement = document.getElementById("portfolioContainer");
     let portfoliotextElement = document.getElementById("portfolio");
@@ -41,6 +30,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props.lang);
     return (
       <div className="App">
         <div className="flex">
@@ -50,29 +40,12 @@ class App extends Component {
               ▸MY PORTFOLIO
             </div>
             <div id={"portfolioContainer"}>
-              <div id="skill">
-                <div className={"folder"} onClick={this.skillDropdown}>
-                  <i
-                    id={"skillFolderIcon"}
-                    className="fas fa-folder-open fa-folder"
-                  />
-                  <span>Skill</span>
-                </div>
-                <div id={"skillFolder"} className={"folderParent"}>
-                  {SKILL.map(skill => {
-                    return (
-                      <React.Fragment key={skill.name}>
-                        <File
-                          name={skill.name}
-                          onFileClick={() => {
-                            this.childFunc(skill.name);
-                          }}
-                        />
-                      </React.Fragment>
-                    );
-                  })}
-                </div>
-              </div>
+              <Folder
+                names={SKILL}
+                onFileClick={() => {
+                  this.send.bind(this);
+                }}
+              />
               <div id="work">
                 <div className={"folder"} onClick={this.workDropdown}>
                   <i
@@ -88,7 +61,7 @@ class App extends Component {
                         <File
                           name={work.name}
                           onFileClick={() => {
-                            this.childFunc(work.name);
+                            this.send.bind(this);
                           }}
                         />
                       </React.Fragment>
@@ -99,13 +72,13 @@ class App extends Component {
               <File
                 name={"README"}
                 onFileClick={() => {
-                  this.childFunc("README");
+                  this.send.bind(this);
                 }}
               />
             </div>
           </div>
           <div className="light-container">
-            <Code state={this.state.codeName} />
+            <Code state={this.props.lang} />
           </div>
         </div>
       </div>
@@ -125,4 +98,14 @@ const WORKS = [
   { name: "Portfolio" },
   { name: "Laravel" }
 ];
-export default App;
+const mapStateToProps = state => ({ lang: state.lang });
+const mapDispatchToProps = dispatch => ({
+  onClick(lang) {
+    dispatch(changeLangState(lang));
+  }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
