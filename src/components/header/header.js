@@ -27,7 +27,7 @@ function Header(props) {
   );
 }
 
-const mapStateToProps = state => ({ lang: state.lang });
+const mapStateToProps = state => ({ lang: state.lang, active: state.active });
 const mapDispatchToProps = dispatch => ({
   onHeaderClick(lang) {
     dispatch(changeCode(lang));

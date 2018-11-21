@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { changeCode } from "../../actions";
+import { activeFile } from "../../actions";
 import "./file.css";
 
 function File(props) {
@@ -31,6 +32,7 @@ const mapStateToProps = state => ({ lang: state.lang });
 const mapDispatchToProps = dispatch => ({
   onFileClick(lang) {
     dispatch(changeCode(lang));
+    dispatch(activeFile(lang));
   }
 });
 

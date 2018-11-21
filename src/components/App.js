@@ -15,7 +15,7 @@ class App extends Component {
       portfolioTriangle.textContent === "▾" ? "▸" : "▾";
   }
   render() {
-    console.log(this.props.lang);
+    console.log(this.props.active);
     return (
       <div className="App">
         <div className="flex">
@@ -57,6 +57,6 @@ const WORK = [
   { name: "Portfolio", info: "¥WelcomeToMyPortfolio¥WORK¥Portfolio" },
   { name: "Laravel", info: "¥WelcomeToMyPortfolio¥WORK¥Laravel" }
 ];
-const mapStateToProps = state => ({ lang: state.lang });
+const mapStateToProps = state => ({ lang: state.lang, active: state.active });
 
 export default connect(mapStateToProps)(App);
