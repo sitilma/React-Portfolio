@@ -1,89 +1,41 @@
 import React, { Component } from "react";
 import "./App.css";
-import File from "./File";
-import Code from "./Code";
+import { connect } from "react-redux";
+import { changeLangState } from "../actions";
+import Folder from "./Folder/Folder";
+import File from "./File/File";
+import Code from "./Code/Code";
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      codeName: "README",
-      actives: ["README"]
-    };
-  }
-  childFunc(code) {
-    this.setState({
-      codeName: code
-    });
-  }
-  skillDropdown() {
-    let skillElement = document.getElementById("skillFolder");
-    let skillFolderElemtnt = document.getElementById("skillFolderIcon");
-    skillElement.classList.toggle("none");
-    skillFolderElemtnt.classList.toggle("fa-folder-open");
-    skillFolderElemtnt.classList.toggle("fa-folder");
-  }
-  workDropdown() {
-    let workElement = document.getElementById("workFolder");
-    let workFolderElemtnt = document.getElementById("workFolderIcon");
-    workElement.classList.toggle("none");
-    workFolderElemtnt.classList.toggle("fa-folder-open");
-    workFolderElemtnt.classList.toggle("fa-folder");
+  portfolioDropdown() {
+    let portfolioElement = document.getElementById("portfolioContainer");
+    let portfoliotextElement = document.getElementById("portfolio");
+    portfolioElement.classList.toggle("none");
+    if (portfoliotextElement.textContent === "▾MY PORTFOLIO") {
+      portfoliotextElement.textContent = "▸MY PORTFOLIO";
+    } else {
+      portfoliotextElement.textContent = "▾MY PORTFOLIO";
+    }
   }
 
   render() {
+    console.log(this.props.lang);
     return (
       <div className="App">
         <div className="flex">
           <div className="left-container">
-            <div id="skill">
-              <div className={"folder"} onClick={this.skillDropdown}>
-                <i id={"skillFolderIcon"} className="fas fa-folder-open" />
-                <span>Skill</span>
-              </div>
-              <div id={"skillFolder"} className={"folderParent"}>
-                {SKILL.map(item => {
-                  return (
-                    <React.Fragment key={item.name}>
-                      <File
-                        name={item.name}
-                        onFileClick={() => {
-                          this.childFunc(item.name);
-                        }}
-                      />
-                    </React.Fragment>
-                  );
-                })}
-              </div>
+            <div className={"exproler"}>EXPLORER</div>
+            <div id={"portfolioContainer"}>
+              <span id={"portfolio"} onClick={this.portfolioDropdown}>
+                ▸MY PORTFOLIO
+              </span>
+              <Folder files={SKILL} name={"Skill"} />
+              <Folder files={WORKS} name={"Works"} />
+              <File name={"README"} />
+              <File name={"Contact"} />
             </div>
-            <div id="work">
-              <div className={"folder"} onClick={this.workDropdown}>
-                <i id={"workFolderIcon"} className="fas fa-folder-open" />
-                <span>Works</span>
-              </div>
-              <div id={"workFolder"} className={"folderParent"}>
-                {WORK.map(item => {
-                  return (
-                    <React.Fragment key={item.name}>
-                      <File
-                        name={item.name}
-                        onFileClick={() => {
-                          this.childFunc(item.name);
-                        }}
-                      />
-                    </React.Fragment>
-                  );
-                })}
-              </div>
-            </div>
-            <File
-              name={"README"}
-              onFileClick={() => {
-                this.childFunc("README");
-              }}
-            />
           </div>
           <div className="light-container">
-            <Code state={this.state.codeName} />
+            <Code />
           </div>
         </div>
       </div>
@@ -91,16 +43,26 @@ class App extends Component {
   }
 }
 const SKILL = [
-  { name: "Ruby" },
   { name: "PHP" },
+  { name: "Ruby" },
   { name: "JavaScript" },
   { name: "Docker" }
 ];
 
-const WORK = [
+const WORKS = [
   { name: "igo" },
   { name: "Markdown" },
   { name: "Portfolio" },
   { name: "Laravel" }
 ];
-export default App;
+const mapStateToProps = state => ({ lang: state.lang });
+const mapDispatchToProps = dispatch => ({
+  onClick(lang) {
+    dispatch(changeLangState(lang));
+  }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
