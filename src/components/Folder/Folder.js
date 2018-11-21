@@ -26,7 +26,11 @@ function Folder(props) {
 
   return (
     <div id={folderName}>
-      <div className={"folder"} onClick={() => folderHiddenSet()}>
+      <div
+        className={"folder"}
+        onClick={() => folderHiddenSet()}
+        title={props.info}
+      >
         <i className="fas fa-folder-open fa-folder" />
         <span>{folderName}</span>
       </div>

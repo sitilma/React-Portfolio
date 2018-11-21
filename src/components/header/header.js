@@ -16,14 +16,24 @@ function Header(props) {
     }
   }
   return (
-    <div
-      className={"header"}
-      onClick={() => props.onHeaderClick(props.name)}
-      title={props.name}
-      id={props.name + "Header"}
-    >
-      {props.name}
-    </div>
+    <React.Fragment>
+      {Headers.map(header => {
+        if (props.active.get(header.name)) {
+          return (
+            <div
+              className={"header"}
+              onClick={() => props.onHeaderClick(header.name)}
+              title={header.info}
+              id={header.name + "Header"}
+              key={header.name}
+            >
+              {header.name}
+            </div>
+          );
+        }
+        return null;
+      })}
+    </React.Fragment>
   );
 }
 

@@ -4,13 +4,13 @@
   background-color: #414242;
   width: 100%;
   max-width: 150px;
-  line-height: 30px;
+  padding: 5px;
+  line-height: 20px;
   border-bottom: none;
-  box-sizing: border-box;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   user-select: none;
   cursor: pointer;
   overflow: hidden;
+  border: 0.1px solid #090a0a;
 }
 
 .activeHeader {

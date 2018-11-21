@@ -5,8 +5,11 @@ import Folder from "./folder/folder";
 import File from "./file/file";
 import Code from "./code/code";
 import Header from "./header/header";
+
+const WELCOME = "¥WelcomeToMyPortfolio";
+const WELCOMESKILL = "¥WelcomeToMyPortfolio¥Skill";
+const WELCOMEWORK = "¥WelcomeToMyPortfolio¥Work";
 class App extends Component {
-  WELCOME = "WelcomeToMyPortfolio";
   portfolioDropdown() {
     let portfolioElement = document.getElementById("portfolioContainer");
     let portfolioTriangle = document.getElementById("textTriangle");
@@ -16,12 +19,13 @@ class App extends Component {
   }
   render() {
     console.log(this.props.active);
+    console.log(this.props.lang);
     return (
       <div className="App">
         <div className="flex">
           <div className={"exproler"}>EXPLORER</div>
           <div id={"header"}>
-            <Header name={"README"} />
+            <Header />
           </div>
         </div>
         <div className="main">
@@ -30,10 +34,10 @@ class App extends Component {
               <div id={"portfolio"} onClick={this.portfolioDropdown}>
                 <span id={"textTriangle"}>▾</span>WelcomeToMyPortfolio
               </div>
-              <Folder files={SKILL} name={"Skill"} />
-              <Folder files={WORK} name={"Work"} />
-              <File name={"README"} info={"¥WelcomeToMyPortfolio¥README"} />
-              <File name={"Contact"} info={"¥WelcomeToMyPortfolio¥Contact"} />
+              <Folder files={SKILL} name={"Skill"} info={WELCOMESKILL} />
+              <Folder files={WORK} name={"Work"} info={WELCOMEWORK} />
+              <File name={"README"} info={`${WELCOME}¥README`} />
+              <File name={"Contact"} info={`${WELCOME}¥Contact`} />
             </div>
           </div>
           <div className="light-container">
@@ -45,17 +49,17 @@ class App extends Component {
   }
 }
 const SKILL = [
-  { name: "PHP", info: "¥WelcomeToMyPortfolio¥Skill¥PHP" },
-  { name: "Ruby", info: "¥WelcomeToMyPortfolio¥Skill¥Ruby" },
-  { name: "JavaScript", info: "¥WelcomeToMyPortfolio¥Skill¥JavaScript" },
-  { name: "Docker", info: "¥WelcomeToMyPortfolio¥Skill¥Docker" }
+  { name: "PHP", info: `${WELCOMESKILL}¥PHP` },
+  { name: "Ruby", info: `${WELCOMESKILL}¥Ruby` },
+  { name: "JavaScript", info: `${WELCOMESKILL}¥JavaScript` },
+  { name: "Docker", info: `${WELCOMESKILL}¥Docker` }
 ];
 
 const WORK = [
-  { name: "igo", info: "¥WelcomeToMyPortfolio¥WORK¥igo" },
-  { name: "Markdown", info: "¥WelcomeToMyPortfolio¥WORK¥Markdown" },
-  { name: "Portfolio", info: "¥WelcomeToMyPortfolio¥WORK¥Portfolio" },
-  { name: "Laravel", info: "¥WelcomeToMyPortfolio¥WORK¥Laravel" }
+  { name: "igo", info: `${WELCOMEWORK}¥igo` },
+  { name: "Markdown", info: `${WELCOMEWORK}¥Markdown` },
+  { name: "Portfolio", info: `${WELCOMEWORK}¥Portfolio` },
+  { name: "Laravel", info: `${WELCOMEWORK}¥Laravel` }
 ];
 const mapStateToProps = state => ({ lang: state.lang, active: state.active });
 
