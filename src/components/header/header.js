@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { changeCode } from "../../actions";
+import { deleteActiveFile } from "../../actions";
 import { Headers } from "./headers";
 import "./header.css";
 
@@ -28,6 +29,12 @@ function Header(props) {
               key={header.name}
             >
               {header.name}
+              <span
+                id={"close"}
+                onClick={() => props.onCloseClick(header.name)}
+              >
+                ×
+              </span>
             </div>
           );
         }
@@ -39,8 +46,11 @@ function Header(props) {
 
 const mapStateToProps = state => ({ lang: state.lang, active: state.active });
 const mapDispatchToProps = dispatch => ({
-  onHeaderClick(lang) {
+  onHeaderClick: lang => {
     dispatch(changeCode(lang));
+  },
+  onCloseClick: lang => {
+    dispatch(deleteActiveFile(lang));
   }
 });
 

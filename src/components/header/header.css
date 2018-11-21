@@ -11,9 +11,16 @@
   cursor: pointer;
   overflow: hidden;
   border: 0.1px solid #090a0a;
+  position: relative;
 }
 
 .activeHeader {
   background-color: #090a0a;
   width: 150px;
+}
+
+#close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
 }

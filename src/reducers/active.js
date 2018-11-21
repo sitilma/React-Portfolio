@@ -1,13 +1,14 @@
 import { ACTIVE, DELETEACTIVE } from "../actions";
 
 const initialState = new Map();
-initialState.set("Contact", "Contact");
+initialState.set("README", "README");
 export default (state = initialState, action) => {
   switch (action.type) {
     case ACTIVE:
       return state.set(action.index, action.lang);
     case DELETEACTIVE:
-      return state.delete(action.lang);
+      state.delete(action.deletelang);
+      return state;
     default:
       return state;
   }

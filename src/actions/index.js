@@ -8,7 +8,7 @@ export const activeFile = lang => ({
   index: lang,
   lang
 });
-export const deleteActiveFile = lang => ({
+export const deleteActiveFile = deletelang => ({
   type: DELETEACTIVE,
-  lang
+  deletelang
 });
