@@ -1,0 +1,19 @@
+.header {
+  color: white;
+  text-align: center;
+  background-color: #414242;
+  width: 100%;
+  max-width: 150px;
+  padding: 5px;
+  line-height: 20px;
+  border-bottom: none;
+  user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  border: 0.1px solid #090a0a;
+}
+
+.activeHeader {
+  background-color: #090a0a;
+  width: 150px;
+}

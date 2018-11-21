@@ -1,6 +1,6 @@
 import React from "react";
-import "./Folder.css";
-import File from "../File/File";
+import "./folder.css";
+import File from "../file/file";
 
 function Folder(props) {
   const folderName = props.name;
@@ -26,7 +26,11 @@ function Folder(props) {
 
   return (
     <div id={folderName}>
-      <div className={"folder"} onClick={() => folderHiddenSet()}>
+      <div
+        className={"folder"}
+        onClick={() => folderHiddenSet()}
+        title={props.info}
+      >
         <i className="fas fa-folder-open fa-folder" />
         <span>{folderName}</span>
       </div>
@@ -34,7 +38,7 @@ function Folder(props) {
         {props.files.map(file => {
           return (
             <React.Fragment key={file.name}>
-              <File name={file.name} />
+              <File name={file.name} info={file.info} />
             </React.Fragment>
           );
         })}

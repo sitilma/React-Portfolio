@@ -23,9 +23,17 @@
 }
 
 .folder:hover {
-  background-color: #505050;
+  background-color: #3a3838;
 }
 
 .file:hover {
+  background-color: #3a3838;
+}
+
+.activeFile {
+  background-color: #505050;
+}
+
+.activeFile:hover {
   background-color: #505050;
 }

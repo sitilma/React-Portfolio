@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import "./Code.css";
-import { Codes } from "./Codes";
+import "./code.css";
+import { Codes } from "./codes";
 
 function Code(props) {
   const langState = props.lang.codeName;

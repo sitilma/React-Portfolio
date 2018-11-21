@@ -1,11 +1,27 @@
 import React from "react";
 import { connect } from "react-redux";
-import { changeLangState } from "../../actions";
-import "./File.css";
+import { changeCode } from "../../actions";
+import { activeFile } from "../../actions";
+import "./file.css";
 
 function File(props) {
+  const activeFile = document.getElementById(props.name + "File");
+  if (props.lang.codeName === props.name) {
+    if (activeFile) {
+      activeFile.classList.add("activeFile");
+    }
+  } else {
+    if (activeFile) {
+      activeFile.classList.remove("activeFile");
+    }
+  }
   return (
-    <div className={"file"} onClick={() => props.onFileClick(props.name)}>
+    <div
+      className={"file"}
+      onClick={() => props.onFileClick(props.name)}
+      id={props.name + "File"}
+      title={props.info}
+    >
       <div className={props.name} />
       {props.name}
     </div>
@@ -15,7 +31,8 @@ function File(props) {
 const mapStateToProps = state => ({ lang: state.lang });
 const mapDispatchToProps = dispatch => ({
   onFileClick(lang) {
-    dispatch(changeLangState(lang));
+    dispatch(changeCode(lang));
+    dispatch(activeFile(lang));
   }
 });
 

@@ -1,37 +1,43 @@
 import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import { changeLangState } from "../actions";
-import Folder from "./Folder/Folder";
-import File from "./File/File";
-import Code from "./Code/Code";
+import Folder from "./folder/folder";
+import File from "./file/file";
+import Code from "./code/code";
+import Header from "./header/header";
+
+const WELCOME = "¥WelcomeToMyPortfolio";
+const WELCOMESKILL = "¥WelcomeToMyPortfolio¥Skill";
+const WELCOMEWORK = "¥WelcomeToMyPortfolio¥Work";
 class App extends Component {
   portfolioDropdown() {
     let portfolioElement = document.getElementById("portfolioContainer");
-    let portfoliotextElement = document.getElementById("portfolio");
+    let portfolioTriangle = document.getElementById("textTriangle");
     portfolioElement.classList.toggle("none");
-    if (portfoliotextElement.textContent === "▾MY PORTFOLIO") {
-      portfoliotextElement.textContent = "▸MY PORTFOLIO";
-    } else {
-      portfoliotextElement.textContent = "▾MY PORTFOLIO";
-    }
+    portfolioTriangle.textContent =
+      portfolioTriangle.textContent === "▾" ? "▸" : "▾";
   }
-
   render() {
+    console.log(this.props.active);
     console.log(this.props.lang);
     return (
       <div className="App">
         <div className="flex">
+          <div className={"exproler"}>EXPLORER</div>
+          <div id={"header"}>
+            <Header />
+          </div>
+        </div>
+        <div className="main">
           <div className="left-container">
-            <div className={"exproler"}>EXPLORER</div>
             <div id={"portfolioContainer"}>
-              <span id={"portfolio"} onClick={this.portfolioDropdown}>
-                ▸MY PORTFOLIO
-              </span>
-              <Folder files={SKILL} name={"Skill"} />
-              <Folder files={WORKS} name={"Works"} />
-              <File name={"README"} />
-              <File name={"Contact"} />
+              <div id={"portfolio"} onClick={this.portfolioDropdown}>
+                <span id={"textTriangle"}>▾</span>WelcomeToMyPortfolio
+              </div>
+              <Folder files={SKILL} name={"Skill"} info={WELCOMESKILL} />
+              <Folder files={WORK} name={"Work"} info={WELCOMEWORK} />
+              <File name={"README"} info={`${WELCOME}¥README`} />
+              <File name={"Contact"} info={`${WELCOME}¥Contact`} />
             </div>
           </div>
           <div className="light-container">
@@ -43,26 +49,18 @@ class App extends Component {
   }
 }
 const SKILL = [
-  { name: "PHP" },
-  { name: "Ruby" },
-  { name: "JavaScript" },
-  { name: "Docker" }
+  { name: "PHP", info: `${WELCOMESKILL}¥PHP` },
+  { name: "Ruby", info: `${WELCOMESKILL}¥Ruby` },
+  { name: "JavaScript", info: `${WELCOMESKILL}¥JavaScript` },
+  { name: "Docker", info: `${WELCOMESKILL}¥Docker` }
 ];
 
-const WORKS = [
-  { name: "igo" },
-  { name: "Markdown" },
-  { name: "Portfolio" },
-  { name: "Laravel" }
+const WORK = [
+  { name: "igo", info: `${WELCOMEWORK}¥igo` },
+  { name: "Markdown", info: `${WELCOMEWORK}¥Markdown` },
+  { name: "Portfolio", info: `${WELCOMEWORK}¥Portfolio` },
+  { name: "Laravel", info: `${WELCOMEWORK}¥Laravel` }
 ];
-const mapStateToProps = state => ({ lang: state.lang });
-const mapDispatchToProps = dispatch => ({
-  onClick(lang) {
-    dispatch(changeLangState(lang));
-  }
-});
+const mapStateToProps = state => ({ lang: state.lang, active: state.active });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps)(App);
