@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import { changeCode } from "../actions";
 import Folder from "./folder/folder";
 import File from "./file/file";
 import Code from "./code/code";
@@ -62,13 +61,5 @@ const WORKS = [
   { name: "Laravel" }
 ];
 const mapStateToProps = state => ({ lang: state.lang });
-const mapDispatchToProps = dispatch => ({
-  onClick(lang) {
-    dispatch(changeCode(lang));
-  }
-});
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps)(App);

@@ -4,11 +4,22 @@ import { changeCode } from "../../actions";
 import "./header.css";
 
 function Header(props) {
+  const activeHeader = document.getElementById(props.name + "Header");
+  if (props.lang.codeName === props.name) {
+    if (activeHeader) {
+      activeHeader.classList.add("activeHeader");
+    }
+  } else {
+    if (activeHeader) {
+      activeHeader.classList.remove("activeHeader");
+    }
+  }
   return (
     <div
       className={"header"}
       onClick={() => props.onHeaderClick(props.name)}
       title={props.name}
+      id={props.name + "Header"}
     >
       {props.name}
     </div>

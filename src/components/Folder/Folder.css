@@ -33,3 +33,7 @@
 .activeFile {
   background-color: #505050;
 }
+
+.activeFile:hover {
+  background-color: #505050;
+}
