@@ -12,13 +12,37 @@
 }
 
 .flex {
+  display: flex;
+}
+
+.exproler {
+  color: white;
+  line-height: 32px;
+  padding-left: 15px;
+  font-size: 12px;
+  height: 32px;
+  background-color: #222323;
+  border-width: 0 1px 0 0;
+  min-width: 250.5px;
+  box-sizing: border-box;
+}
+
+#header {
+  height: 32px;
+  width: auto;
+  background-color: #222323;
+  flex-basis: 10000px;
+  display: flex;
+}
+
+.main {
   height: 100%;
   display: flex;
 }
 
 .left-container {
   background-color: #222323;
-  border: 0 dashed #414344;
+  border: 0 solid #414344;
   border-width: 0 1px 0 0;
   height: 100%;
   min-width: 250px;
@@ -31,17 +55,9 @@
   display: flex;
 }
 
-.exproler {
-  color: white;
-  padding: 10px;
-  font-size: 12px;
-  height: 40px;
-  box-sizing: border-box;
-}
-
 #portfolio {
   display: block;
-  background: #414242;
+  background-color: #414242;
   color: white;
   padding: 3px;
   font-size: 12px;

@@ -5,29 +5,35 @@ import { changeCode } from "../actions";
 import Folder from "./folder/folder";
 import File from "./file/file";
 import Code from "./code/code";
+import Header from "./header/header";
 class App extends Component {
+  WELCOME = "WelcomeToMyPortfolio";
   portfolioDropdown() {
     let portfolioElement = document.getElementById("portfolioContainer");
-    let portfoliotextElement = document.getElementById("portfolio");
+    let portfolioTriangle = document.getElementById("textTriangle");
     portfolioElement.classList.toggle("none");
-    if (portfoliotextElement.textContent === "▾MY PORTFOLIO") {
-      portfoliotextElement.textContent = "▸MY PORTFOLIO";
-    } else {
-      portfoliotextElement.textContent = "▾MY PORTFOLIO";
-    }
+    portfolioTriangle.textContent =
+      portfolioTriangle.textContent === "▾" ? "▸" : "▾";
   }
+
+  headerCreate() {}
 
   render() {
     console.log(this.props.lang);
     return (
       <div className="App">
         <div className="flex">
+          <div className={"exproler"}>EXPLORER</div>
+          <div id={"header"}>
+            <Header name={"README"} />
+          </div>
+        </div>
+        <div className="main">
           <div className="left-container">
-            <div className={"exproler"}>EXPLORER</div>
             <div id={"portfolioContainer"}>
-              <span id={"portfolio"} onClick={this.portfolioDropdown}>
-                ▸MY PORTFOLIO
-              </span>
+              <div id={"portfolio"} onClick={this.portfolioDropdown}>
+                <span id={"textTriangle"}>▾</span>WelcomeToMyPortfolio
+              </div>
               <Folder files={SKILL} name={"Skill"} />
               <Folder files={WORKS} name={"Works"} />
               <File name={"README"} />
