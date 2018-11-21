@@ -19,6 +19,7 @@ function File(props) {
       className={"file"}
       onClick={() => props.onFileClick(props.name)}
       id={props.name + "File"}
+      title={props.info}
     >
       <div className={props.name} />
       {props.name}

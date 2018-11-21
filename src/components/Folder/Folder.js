@@ -34,7 +34,7 @@ function Folder(props) {
         {props.files.map(file => {
           return (
             <React.Fragment key={file.name}>
-              <File name={file.name} />
+              <File name={file.name} info={file.info} />
             </React.Fragment>
           );
         })}

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { changeCode } from "../../actions";
+import { Headers } from "./headers";
 import "./header.css";
 
 function Header(props) {

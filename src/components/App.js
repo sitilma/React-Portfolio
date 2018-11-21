@@ -14,9 +14,6 @@ class App extends Component {
     portfolioTriangle.textContent =
       portfolioTriangle.textContent === "▾" ? "▸" : "▾";
   }
-
-  headerCreate() {}
-
   render() {
     console.log(this.props.lang);
     return (
@@ -34,9 +31,9 @@ class App extends Component {
                 <span id={"textTriangle"}>▾</span>WelcomeToMyPortfolio
               </div>
               <Folder files={SKILL} name={"Skill"} />
-              <Folder files={WORKS} name={"Works"} />
-              <File name={"README"} />
-              <File name={"Contact"} />
+              <Folder files={WORK} name={"Work"} />
+              <File name={"README"} info={"¥WelcomeToMyPortfolio¥README"} />
+              <File name={"Contact"} info={"¥WelcomeToMyPortfolio¥Contact"} />
             </div>
           </div>
           <div className="light-container">
@@ -48,17 +45,17 @@ class App extends Component {
   }
 }
 const SKILL = [
-  { name: "PHP" },
-  { name: "Ruby" },
-  { name: "JavaScript" },
-  { name: "Docker" }
+  { name: "PHP", info: "¥WelcomeToMyPortfolio¥Skill¥PHP" },
+  { name: "Ruby", info: "¥WelcomeToMyPortfolio¥Skill¥Ruby" },
+  { name: "JavaScript", info: "¥WelcomeToMyPortfolio¥Skill¥JavaScript" },
+  { name: "Docker", info: "¥WelcomeToMyPortfolio¥Skill¥Docker" }
 ];
 
-const WORKS = [
-  { name: "igo" },
-  { name: "Markdown" },
-  { name: "Portfolio" },
-  { name: "Laravel" }
+const WORK = [
+  { name: "igo", info: "¥WelcomeToMyPortfolio¥WORK¥igo" },
+  { name: "Markdown", info: "¥WelcomeToMyPortfolio¥WORK¥Markdown" },
+  { name: "Portfolio", info: "¥WelcomeToMyPortfolio¥WORK¥Portfolio" },
+  { name: "Laravel", info: "¥WelcomeToMyPortfolio¥WORK¥Laravel" }
 ];
 const mapStateToProps = state => ({ lang: state.lang });
 
