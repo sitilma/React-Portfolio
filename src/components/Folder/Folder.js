@@ -7,48 +7,25 @@ class Folder extends React.Component {
     this.state = {};
   }
 
-  clickButton() {
-    return this.props.onFileClick();
-  }
-
   render() {
     return (
-      <div>
+      <React.Fragment>
         <div className={"folder"}>
           <i className="fas fa-folder-open fa-folder" />
-          <span>Skill</span>
+          <span>{this.props.name}</span>
         </div>
         <div className={"folderParent"}>
           {this.props.names.map(skill => {
             return (
               <React.Fragment key={skill.name}>
-                <File name={skill.name} onFileClick={this.props.onFileClick} />
+                <File name={skill.name} />
               </React.Fragment>
             );
           })}
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
-// function Folder(props) {
-// return (
-//   <div>
-//     <div className={"folder"}>
-//       <i className="fas fa-folder-open fa-folder" />
-//       <span>Skill</span>
-//     </div>
-//     <div className={"folderParent"}>
-//       {props.names.map(skill => {
-//         return (
-//           <React.Fragment key={skill.name}>
-//             <File name={skill.name} onFileClick={props.onFileClick} />
-//           </React.Fragment>
-//         );
-//       })}
-//     </div>
-//   </div>
-// );
-// }
 
 export default Folder;

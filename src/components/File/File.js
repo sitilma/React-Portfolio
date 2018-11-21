@@ -4,12 +4,8 @@ import { changeLangState } from "../../actions";
 import "./File.css";
 
 function File(props) {
-  function send(e) {
-    props.onClick(props.name);
-  }
-
   return (
-    <div className={"file"} onClick={send.bind()}>
+    <div className={"file"} onClick={() => props.onClick(props.name)}>
       <div className={props.name} />
       {props.name}
     </div>

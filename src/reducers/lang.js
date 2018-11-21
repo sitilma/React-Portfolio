@@ -5,8 +5,8 @@ const initialState = { codeName: "README" };
 export default (state = initialState, action) => {
   switch (action.type) {
     case LANG:
-      return { lang: action.lang };
+      return { codeName: action.lang };
     default:
-      return { lang: state.codeName };
+      return state;
   }
 };

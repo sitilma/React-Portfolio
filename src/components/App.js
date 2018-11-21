@@ -40,12 +40,7 @@ class App extends Component {
               ▸MY PORTFOLIO
             </div>
             <div id={"portfolioContainer"}>
-              <Folder
-                names={SKILL}
-                onFileClick={() => {
-                  this.send.bind(this);
-                }}
-              />
+              <Folder names={SKILL} name={"Skill"} />
               <div id="work">
                 <div className={"folder"} onClick={this.workDropdown}>
                   <i
@@ -58,12 +53,7 @@ class App extends Component {
                   {WORKS.map(work => {
                     return (
                       <React.Fragment key={work.name}>
-                        <File
-                          name={work.name}
-                          onFileClick={() => {
-                            this.send.bind(this);
-                          }}
-                        />
+                        <File name={work.name} />
                       </React.Fragment>
                     );
                   })}
@@ -78,7 +68,7 @@ class App extends Component {
             </div>
           </div>
           <div className="light-container">
-            <Code state={this.props.lang} />
+            <Code />
           </div>
         </div>
       </div>
