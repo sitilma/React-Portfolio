@@ -1,6 +1,6 @@
 import React from "react";
-import "./Folder.css";
-import File from "../File/File";
+import "./folder.css";
+import File from "../file/file";
 
 function Folder(props) {
   const folderName = props.name;

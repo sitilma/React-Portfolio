@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import { changeLangState } from "../actions";
-import Folder from "./Folder/Folder";
-import File from "./File/File";
-import Code from "./Code/Code";
+import { changeCode } from "../actions";
+import Folder from "./folder/folder";
+import File from "./file/file";
+import Code from "./code/code";
 class App extends Component {
   portfolioDropdown() {
     let portfolioElement = document.getElementById("portfolioContainer");
@@ -58,7 +58,7 @@ const WORKS = [
 const mapStateToProps = state => ({ lang: state.lang });
 const mapDispatchToProps = dispatch => ({
   onClick(lang) {
-    dispatch(changeLangState(lang));
+    dispatch(changeCode(lang));
   }
 });
 

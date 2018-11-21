@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { changeLangState } from "../../actions";
-import "./File.css";
+import { changeCode } from "../../actions";
+import "./file.css";
 
 function File(props) {
   return (
@@ -15,7 +15,7 @@ function File(props) {
 const mapStateToProps = state => ({ lang: state.lang });
 const mapDispatchToProps = dispatch => ({
   onFileClick(lang) {
-    dispatch(changeLangState(lang));
+    dispatch(changeCode(lang));
   }
 });
 
