@@ -10,23 +10,11 @@ class App extends Component {
     let portfolioElement = document.getElementById("portfolioContainer");
     let portfoliotextElement = document.getElementById("portfolio");
     portfolioElement.classList.toggle("none");
-    if ((portfoliotextElement.textContent = "▾MY PORTFOLIO")) {
+    if (portfoliotextElement.textContent === "▾MY PORTFOLIO") {
       portfoliotextElement.textContent = "▸MY PORTFOLIO";
     } else {
       portfoliotextElement.textContent = "▾MY PORTFOLIO";
     }
-  }
-  skillDropdown() {
-    let skillElement = document.getElementById("skillFolder");
-    let skillFolderElemtnt = document.getElementById("skillFolderIcon");
-    skillElement.classList.toggle("none");
-    skillFolderElemtnt.classList.toggle("fa-folder-open");
-  }
-  workDropdown() {
-    let workElement = document.getElementById("workFolder");
-    let workFolderElemtnt = document.getElementById("workFolderIcon");
-    workElement.classList.toggle("none");
-    workFolderElemtnt.classList.toggle("fa-folder-open");
   }
 
   render() {
@@ -36,35 +24,14 @@ class App extends Component {
         <div className="flex">
           <div className="left-container">
             <div className={"exproler"}>EXPLORER</div>
-            <div id={"portfolio"} onClick={this.portfolioDropdown}>
-              ▸MY PORTFOLIO
-            </div>
             <div id={"portfolioContainer"}>
-              <Folder names={SKILL} name={"Skill"} />
-              <div id="work">
-                <div className={"folder"} onClick={this.workDropdown}>
-                  <i
-                    id={"workFolderIcon"}
-                    className="fas fa-folder-open fa-folder"
-                  />
-                  <span>Works</span>
-                </div>
-                <div id={"workFolder"} className={"folderParent"}>
-                  {WORKS.map(work => {
-                    return (
-                      <React.Fragment key={work.name}>
-                        <File name={work.name} />
-                      </React.Fragment>
-                    );
-                  })}
-                </div>
-              </div>
-              <File
-                name={"README"}
-                onFileClick={() => {
-                  this.send.bind(this);
-                }}
-              />
+              <span id={"portfolio"} onClick={this.portfolioDropdown}>
+                ▸MY PORTFOLIO
+              </span>
+              <Folder files={SKILL} name={"Skill"} />
+              <Folder files={WORKS} name={"Works"} />
+              <File name={"README"} />
+              <File name={"Contact"} />
             </div>
           </div>
           <div className="light-container">
@@ -76,8 +43,8 @@ class App extends Component {
   }
 }
 const SKILL = [
-  { name: "Ruby" },
   { name: "PHP" },
+  { name: "Ruby" },
   { name: "JavaScript" },
   { name: "Docker" }
 ];

@@ -5,7 +5,7 @@ import "./File.css";
 
 function File(props) {
   return (
-    <div className={"file"} onClick={() => props.onClick(props.name)}>
+    <div className={"file"} onClick={() => props.onFileClick(props.name)}>
       <div className={props.name} />
       {props.name}
     </div>
@@ -14,7 +14,7 @@ function File(props) {
 
 const mapStateToProps = state => ({ lang: state.lang });
 const mapDispatchToProps = dispatch => ({
-  onClick(lang) {
+  onFileClick(lang) {
     dispatch(changeLangState(lang));
   }
 });

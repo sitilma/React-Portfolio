@@ -40,44 +40,11 @@
 }
 
 #portfolio {
+  display: block;
   background: #414242;
   color: white;
   padding: 3px;
   font-size: 12px;
   cursor: pointer;
   user-select: none;
-}
-
-.folder {
-  color: #e0bc7a;
-  cursor: pointer;
-  user-select: none;
-  margin-left: 20px;
-}
-
-.folder span {
-  margin-left: 8px;
-}
-
-.folderParent > .file {
-  cursor: pointer;
-  user-select: none;
-  margin-left: 35px;
-}
-
-.file {
-  display: flex;
-  cursor: pointer;
-  user-select: none;
-  margin-left: 20px;
-}
-
-.folder:hover {
-  background-color: #000;
-  opacity: 0.8;
-}
-
-.file:hover {
-  background-color: #000;
-  opacity: 0.8;
 }

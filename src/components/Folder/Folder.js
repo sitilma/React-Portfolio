@@ -1,31 +1,46 @@
 import React from "react";
 import "./Folder.css";
 import File from "../File/File";
-class Folder extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+
+function Folder(props) {
+  const folderName = props.name;
+
+  function folderHiddenSet() {
+    if (document.getElementById(folderName)) {
+      folderHidden();
+      folderChangeIcon();
+    }
   }
 
-  render() {
-    return (
-      <React.Fragment>
-        <div className={"folder"}>
-          <i className="fas fa-folder-open fa-folder" />
-          <span>{this.props.name}</span>
-        </div>
-        <div className={"folderParent"}>
-          {this.props.names.map(skill => {
-            return (
-              <React.Fragment key={skill.name}>
-                <File name={skill.name} />
-              </React.Fragment>
-            );
-          })}
-        </div>
-      </React.Fragment>
-    );
+  function folderHidden() {
+    let fileParentElement = document.getElementById(folderName)
+      .lastElementChild;
+    fileParentElement.classList.toggle("none");
   }
+
+  function folderChangeIcon() {
+    let folderElement = document.getElementById(folderName).firstElementChild
+      .firstElementChild;
+    folderElement.classList.toggle("fa-folder-open");
+  }
+
+  return (
+    <div id={folderName}>
+      <div className={"folder"} onClick={() => folderHiddenSet()}>
+        <i className="fas fa-folder-open fa-folder" />
+        <span>{folderName}</span>
+      </div>
+      <div className={"fileParent"}>
+        {props.files.map(file => {
+          return (
+            <React.Fragment key={file.name}>
+              <File name={file.name} />
+            </React.Fragment>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 export default Folder;

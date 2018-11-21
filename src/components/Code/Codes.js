@@ -2,22 +2,22 @@ import React from "react";
 
 export const Codes = [
   {
+    id: "PHP",
+    number: 4,
+    body: (
+      <div className="code" key={"PHP"}>
+        <p>php</p>
+        <p>hoge</p>
+      </div>
+    )
+  },
+  {
     id: "Ruby",
     number: 4,
     body: (
       <div className="code" key={"Ruby"}>
         <p>ruby</p>
         <br />
-        <p>hoge</p>
-      </div>
-    )
-  },
-  {
-    id: "PHP",
-    number: 4,
-    body: (
-      <div className="code" key={"PHP"}>
-        <p>php</p>
         <p>hoge</p>
       </div>
     )
@@ -88,6 +88,16 @@ export const Codes = [
     body: (
       <div className="code" key={"README"}>
         <p>readme</p>
+        <p>hoge</p>
+      </div>
+    )
+  },
+  {
+    id: "Contact",
+    number: 4,
+    body: (
+      <div className="code" key={"Contact"}>
+        <p>Contact</p>
         <p>hoge</p>
       </div>
     )
