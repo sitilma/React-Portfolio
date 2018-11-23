@@ -28,9 +28,9 @@ function File(props) {
   );
 }
 
-const mapStateToProps = state => ({ lang: state.lang });
+const mapStateToProps = state => ({ lang: state.lang, active: state.active });
 const mapDispatchToProps = dispatch => ({
-  onFileClick(lang) {
+  onFileClick(lang, number) {
     dispatch(changeCode(lang));
     dispatch(activeFile(lang));
   }
