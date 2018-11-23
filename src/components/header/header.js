@@ -6,6 +6,7 @@ import { Headers } from "./headers";
 import "./header.css";
 
 function Header(props) {
+  const CODENAME = props.lang.codeName;
   const activeHeader = document.getElementById(props.name + "Header");
   const activeValue = props.active.values();
   const nextlang = activeValue.next().value;
@@ -20,19 +21,15 @@ function Header(props) {
     });
   }
   function onCloseClick(currentlang) {
-    props.deleteCodeName(currentlang, props.lang.codeName);
-    if (props.lang.codeName === currentlang) {
-      let newlang = "";
-      if (props.lang.codeName === nextlang) {
-        newlang = activeValue.next().value;
-      } else {
-        newlang = nextlang;
-      }
+    props.deleteCodeName(currentlang, CODENAME);
+    if (CODENAME === currentlang) {
+      const newlang =
+        CODENAME === nextlang ? activeValue.next().value : nextlang;
       props.newCodeName(newlang);
     }
   }
   console.log(newHeaders);
-  if (props.lang.codeName === props.name) {
+  if (CODENAME === props.name) {
     if (activeHeader) {
       activeHeader.classList.add("activeHeader");
     }
