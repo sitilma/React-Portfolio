@@ -7,9 +7,8 @@ import "./header.css";
 
 function Header(props) {
   const activeHeader = document.getElementById(props.name + "Header");
-  const nextlang = props.active.values().next().value;
-
-  // clickされた順番通りに配列を作成する。
+  const activeValue = props.active.values();
+  const nextlang = activeValue.next().value;
   const newHeaders = [];
   props.active.forEach(activeMapHeaders);
   function activeMapHeaders(key) {
@@ -19,6 +18,18 @@ function Header(props) {
       }
       return null;
     });
+  }
+  function onCloseClick(currentlang) {
+    props.deleteCodeName(currentlang, props.lang.codeName);
+    if (props.lang.codeName === currentlang) {
+      let newlang = "";
+      if (props.lang.codeName === nextlang) {
+        newlang = activeValue.next().value;
+      } else {
+        newlang = nextlang;
+      }
+      props.newCodeName(newlang);
+    }
   }
   console.log(newHeaders);
   if (props.lang.codeName === props.name) {
@@ -41,10 +52,7 @@ function Header(props) {
             key={header.name}
           >
             {header.name}
-            <span
-              id={"close"}
-              onClick={() => props.onCloseClick(header.name, nextlang)}
-            >
+            <span id={"close"} onClick={() => onCloseClick(header.name)}>
               ×
             </span>
           </div>
@@ -59,8 +67,11 @@ const mapDispatchToProps = dispatch => ({
   onHeaderClick: lang => {
     dispatch(changeCode(lang));
   },
-  onCloseClick: (deletelang, newlang) => {
-    dispatch(deleteActiveFile(deletelang));
+  deleteCodeName: (currentlang, currentCodeName) => {
+    dispatch(deleteActiveFile(currentlang));
+    dispatch(changeCode(currentCodeName));
+  },
+  newCodeName: newlang => {
     dispatch(changeCode(newlang));
   }
 });
