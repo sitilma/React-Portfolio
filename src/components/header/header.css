@@ -27,3 +27,10 @@
   right: 10px;
   top: 0;
 }
+
+.default {
+  margin: 0 auto;
+}
+.defaultTop {
+  color: white;
+}

@@ -27,7 +27,6 @@ function Head(props) {
           </React.Fragment>
         );
       })}
-      ;
     </div>
   );
 }

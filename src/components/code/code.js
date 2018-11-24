@@ -5,6 +5,16 @@ import { Codes } from "./codes";
 
 function Code(props) {
   const langState = props.lang.codeName;
+
+  function defaultCode() {
+    if (langState === undefined) {
+      return (
+        <div className="default">
+          <h1 className={"defaultTop"}>Welcome To MyPortfolio</h1>
+        </div>
+      );
+    }
+  }
   return (
     <React.Fragment>
       {Codes.map(code => {
@@ -23,6 +33,7 @@ function Code(props) {
         }
         return null;
       })}
+      {defaultCode()}
     </React.Fragment>
   );
 }
