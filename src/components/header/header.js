@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { changeCode } from "../../actions";
 import { deleteActiveFile } from "../../actions";
-import { Headers } from "./headers";
 import "./header.css";
 
 function Header(props) {
@@ -10,17 +9,12 @@ function Header(props) {
   const activeHeader = document.getElementById(props.name + "Header");
   const activeValue = props.active.values();
   const nextlang = activeValue.next().value;
-  const newHeaders = [];
-  props.active.forEach(activeMapHeaders);
-  function activeMapHeaders(key) {
-    Headers.map(header => {
-      if (key === header.name) {
-        return newHeaders.push(header);
-      }
-      return null;
-    });
+
+  function onCloseClick(e) {
+    e.stopPropagation();
+    onCloseClickb("readme");
   }
-  function onCloseClick(currentlang) {
+  function onCloseClickb(currentlang) {
     props.deleteCodeName(currentlang, CODENAME);
     if (CODENAME === currentlang) {
       const newlang =
@@ -28,8 +22,8 @@ function Header(props) {
       props.newCodeName(newlang);
     }
   }
-  console.log(newHeaders);
-  if (CODENAME === props.name) {
+
+  if (props.lang.codeName === props.name) {
     if (activeHeader) {
       activeHeader.classList.add("activeHeader");
     }
@@ -38,24 +32,25 @@ function Header(props) {
       activeHeader.classList.remove("activeHeader");
     }
   }
+
   return (
-    <React.Fragment>
-      {newHeaders.map(header => {
-        return (
-          <div
-            className={"header"}
-            title={header.info}
-            id={header.name + "Header"}
-            key={header.name}
-          >
-            {header.name}
-            <span id={"close"} onClick={() => onCloseClick(header.name)}>
-              ×
-            </span>
-          </div>
-        );
-      })}
-    </React.Fragment>
+    <div>
+      <div
+        className={"header"}
+        title={props.info}
+        id={props.name + "Header"}
+        onClick={() => props.onHeaderClick(props.name)}
+      >
+        <span
+          className={"close"}
+          id={props.name + "close"}
+          onClick={() => onCloseClick(props.name)}
+        >
+          ×
+        </span>
+        {props.name}
+      </div>
+    </div>
   );
 }
 

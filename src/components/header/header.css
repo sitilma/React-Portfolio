@@ -3,15 +3,18 @@
   text-align: center;
   background-color: #414242;
   width: 100%;
+  height: 100%;
   max-width: 150px;
-  padding: 5px;
-  line-height: 20px;
+  padding: 0 5px;
+  line-height: 32px;
   border-bottom: none;
   user-select: none;
   cursor: pointer;
   overflow: hidden;
   border: 0.1px solid #090a0a;
   position: relative;
+  display: flex;
+  box-sizing: border-box;
 }
 
 .activeHeader {
@@ -19,8 +22,8 @@
   width: 150px;
 }
 
-#close {
+.close {
   position: absolute;
   right: 10px;
-  top: 5px;
+  top: 0;
 }

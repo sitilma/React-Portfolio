@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Folder from "./folder/folder";
 import File from "./file/file";
 import Code from "./code/code";
-import Header from "./header/header";
+import Head from "./header/head";
 
 const WELCOME = "¥WelcomeToMyPortfolio";
 const WELCOMESKILL = "¥WelcomeToMyPortfolio¥Skill";
@@ -24,9 +24,7 @@ class App extends Component {
       <div className="App">
         <div className="flex">
           <div className={"exproler"}>EXPLORER</div>
-          <div id={"header"}>
-            <Header />
-          </div>
+          <Head />
         </div>
         <div className="main">
           <div className="left-container">
