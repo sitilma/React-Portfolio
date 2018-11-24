@@ -1,6 +1,6 @@
 import { ACTIVE, DELETEACTIVE } from "../actions";
 
-const initialState = new Map([["README", "README"]]);
+const initialState = new Map([]);
 export default (state = initialState, action) => {
   switch (action.type) {
     case ACTIVE:

@@ -1,6 +1,6 @@
 import { LANG } from "../actions";
 
-const initialState = { codeName: "README" };
+const initialState = { codeName: undefined };
 
 export default (state = initialState, action) => {
   switch (action.type) {
