@@ -6,7 +6,6 @@ import "./header.css";
 
 function Header(props) {
   const CODENAME = props.lang.codeName;
-  const activeHeader = document.getElementById(props.name + "Header");
   const activeValue = props.active.values();
   const nextlang = activeValue.next().value;
 
@@ -23,20 +22,10 @@ function Header(props) {
     }
   }
 
-  if (props.lang.codeName === props.name) {
-    if (activeHeader) {
-      activeHeader.classList.add("activeHeader");
-    }
-  } else {
-    if (activeHeader) {
-      activeHeader.classList.remove("activeHeader");
-    }
-  }
-
   return (
-    <div>
+    <React.Fragment>
       <div
-        className={"header"}
+        className={"header activeHeader"}
         title={props.info}
         id={props.name + "Header"}
         onClick={() => props.onHeaderClick(props.name)}
@@ -50,7 +39,7 @@ function Header(props) {
         </span>
         {props.name}
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 
