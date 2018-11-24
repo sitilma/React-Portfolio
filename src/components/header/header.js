@@ -10,11 +10,11 @@ function Header(props) {
   const activeValue = props.active.values();
   const nextlang = activeValue.next().value;
 
-  function onCloseClick(e) {
+  function onCloseStop(e) {
     e.stopPropagation();
-    onCloseClickb("readme");
+    onCloseClick(props.name);
   }
-  function onCloseClickb(currentlang) {
+  function onCloseClick(currentlang) {
     props.deleteCodeName(currentlang, CODENAME);
     if (CODENAME === currentlang) {
       const newlang =
@@ -44,7 +44,7 @@ function Header(props) {
         <span
           className={"close"}
           id={props.name + "close"}
-          onClick={() => onCloseClick(props.name)}
+          onClick={onCloseStop}
         >
           ×
         </span>
