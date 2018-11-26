@@ -41,10 +41,6 @@
 }
 
 .light-container {
-  width: auto;
-  background-color: #090a0a;
-  flex-basis: 10000px;
-  display: flex;
 }
 
 #portfolio {

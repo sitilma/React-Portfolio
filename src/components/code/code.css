@@ -1,3 +1,11 @@
+.codeContainer {
+  width: auto;
+  height: 65%;
+  background-color: #090a0a;
+  flex-basis: 10000px;
+  display: flex;
+}
+
 .code {
   width: 845px;
   margin: 0;

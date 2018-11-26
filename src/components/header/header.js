@@ -8,6 +8,7 @@ function Header(props) {
   const CODENAME = props.code.codeName;
   const activeValue = props.active.values();
   const nextcode = activeValue.next().value;
+  const headerWidth = 100 / props.active.size + "%";
 
   // 子要素がクリックされても親のClickEventは発火しないように。
   function onCloseClick(e) {
@@ -36,6 +37,7 @@ function Header(props) {
         title={props.info}
         id={props.name + "Header"}
         onClick={() => props.onHeaderClick(props.name)}
+        style={{ width: headerWidth }}
       >
         <div className={"headerName"}>{props.name}</div>
         <span
