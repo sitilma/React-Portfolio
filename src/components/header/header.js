@@ -28,14 +28,16 @@ function Header(props) {
       props.newCodeName(newcode);
     }
   }
+
   return (
     <React.Fragment>
       <div
-        className={"header activeHeader"}
+        className={"header"}
         title={props.info}
         id={props.name + "Header"}
         onClick={() => props.onHeaderClick(props.name)}
       >
+        <div className={"headerName"}>{props.name}</div>
         <span
           className={"close"}
           id={props.name + "close"}
@@ -43,7 +45,6 @@ function Header(props) {
         >
           ×
         </span>
-        {props.name}
       </div>
     </React.Fragment>
   );

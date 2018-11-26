@@ -20,7 +20,23 @@ class App extends Component {
       portfolioTriangle.textContent === "▾" ? "▸" : "▾";
   }
 
-  componentDidMount() {}
+  // componentが再描画されると呼び出される。"activeHeader"を取り除き現在のcodeHeaderに"activeHeader"を与える。
+  componentDidUpdate() {
+    console.log("componentDidMount");
+    const prevHeader = document.getElementsByClassName("activeHeader");
+    const activeHeader = document.getElementById(
+      this.props.code.codeName + "Header"
+    );
+    if (prevHeader[0]) {
+      console.log("prevHeader");
+      prevHeader[0].classList.remove("activeHeader");
+    }
+    if (activeHeader) {
+      console.log("activeHeader");
+      activeHeader.classList.add("activeHeader");
+    }
+  }
+
   render() {
     console.log(this.props.active);
     console.log(this.props.code);
