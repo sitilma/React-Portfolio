@@ -6,20 +6,24 @@ import File from "./file/file";
 import Code from "./code/code";
 import Head from "./header/head";
 
+// info
 const WELCOME = "¥WelcomeToMyPortfolio";
 const WELCOMESKILL = "¥WelcomeToMyPortfolio¥Skill";
 const WELCOMEWORK = "¥WelcomeToMyPortfolio¥Work";
 class App extends Component {
+  // portfolioの表示非表示及びテキストの矢印を変える。
   portfolioDropdown() {
-    let portfolioElement = document.getElementById("portfolioContainer");
-    let portfolioTriangle = document.getElementById("textTriangle");
+    const portfolioElement = document.getElementById("portfolioContainer");
+    const portfolioTriangle = document.getElementById("textTriangle");
     portfolioElement.classList.toggle("none");
     portfolioTriangle.textContent =
       portfolioTriangle.textContent === "▾" ? "▸" : "▾";
   }
+
+  componentDidMount() {}
   render() {
-    // console.log(this.props.active);
-    // console.log(this.props.lang);
+    console.log(this.props.active);
+    console.log(this.props.code);
     return (
       <div className="App">
         <div className="flex">
@@ -46,6 +50,8 @@ class App extends Component {
     );
   }
 }
+
+// folder構成の情報まとめ。
 const SKILL = [
   { name: "PHP", info: `${WELCOMESKILL}¥PHP` },
   { name: "Ruby", info: `${WELCOMESKILL}¥Ruby` },
@@ -59,6 +65,6 @@ const WORK = [
   { name: "Portfolio", info: `${WELCOMEWORK}¥Portfolio` },
   { name: "Laravel", info: `${WELCOMEWORK}¥Laravel` }
 ];
-const mapStateToProps = state => ({ lang: state.lang, active: state.active });
+const mapStateToProps = state => ({ code: state.code, active: state.active });
 
 export default connect(mapStateToProps)(App);

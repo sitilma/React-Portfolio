@@ -4,10 +4,10 @@ import "./code.css";
 import { Codes } from "./codes";
 
 function Code(props) {
-  const langState = props.lang.codeName;
+  const codeState = props.code.codeName;
 
   function defaultCode() {
-    if (langState === undefined) {
+    if (codeState === undefined) {
       return (
         <div className="default">
           <h1 className={"defaultTop"}>Welcome To MyPortfolio</h1>
@@ -18,10 +18,10 @@ function Code(props) {
   return (
     <React.Fragment>
       {Codes.map(code => {
-        if (code.id === langState) {
+        if (code.id === codeState) {
           const Number = Array.from(Array(code.number).keys());
           return (
-            <React.Fragment key={langState}>
+            <React.Fragment key={codeState}>
               <ul className="number">
                 {Number.map(number => {
                   return <li key={number + 1}>{number + 1}</li>;
@@ -38,6 +38,6 @@ function Code(props) {
   );
 }
 
-const mapStateToProps = state => ({ lang: state.lang });
+const mapStateToProps = state => ({ code: state.code });
 
 export default connect(mapStateToProps)(Code);

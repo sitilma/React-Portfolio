@@ -5,23 +5,29 @@ import { deleteActiveFile } from "../../actions";
 import "./header.css";
 
 function Header(props) {
-  const CODENAME = props.lang.codeName;
+  const CODENAME = props.code.codeName;
   const activeValue = props.active.values();
-  const nextlang = activeValue.next().value;
+  const nextcode = activeValue.next().value;
 
-  function onCloseStop(e) {
+  // 子要素がクリックされても親のClickEventは発火しないように。
+  function onCloseClick(e) {
     e.stopPropagation();
-    onCloseClick(props.name);
+    closeClickEvent(props.name);
   }
-  function onCloseClick(currentlang) {
-    props.deleteCodeName(currentlang, CODENAME);
-    if (CODENAME === currentlang) {
-      const newlang =
-        CODENAME === nextlang ? activeValue.next().value : nextlang;
-      props.newCodeName(newlang);
+
+  // dispatchに渡す。activeStateから削除し、現在のCodeがprops.nameと一致すればcodeを変更する。
+  function closeClickEvent(currentcode) {
+    props.deleteActiveFile(currentcode, CODENAME);
+    newCodeEvent(currentcode);
+  }
+  // ActiveStateの中身がまだ存在すればそれを新しいCodeStateにする。
+  function newCodeEvent(currentcode) {
+    if (CODENAME === currentcode) {
+      const newcode =
+        CODENAME === nextcode ? activeValue.next().value : nextcode;
+      props.newCodeName(newcode);
     }
   }
-
   return (
     <React.Fragment>
       <div
@@ -33,7 +39,7 @@ function Header(props) {
         <span
           className={"close"}
           id={props.name + "close"}
-          onClick={onCloseStop}
+          onClick={onCloseClick}
         >
           ×
         </span>
@@ -43,17 +49,21 @@ function Header(props) {
   );
 }
 
-const mapStateToProps = state => ({ lang: state.lang, active: state.active });
+const mapStateToProps = state => ({ code: state.code, active: state.active });
 const mapDispatchToProps = dispatch => ({
-  onHeaderClick: lang => {
-    dispatch(changeCode(lang));
+  onHeaderClick: code => {
+    dispatch(changeCode(code));
   },
-  deleteCodeName: (currentlang, currentCodeName) => {
-    dispatch(deleteActiveFile(currentlang));
+
+  // 引数のActiveStateを削除し、CodeStateを変更する
+  deleteActiveFile: (currentcode, currentCodeName) => {
+    dispatch(deleteActiveFile(currentcode));
     dispatch(changeCode(currentCodeName));
   },
-  newCodeName: newlang => {
-    dispatch(changeCode(newlang));
+
+  // ActiveStateの中身がまだ存在すればそれを新しいCodeStateにする。
+  newCodeName: newcode => {
+    dispatch(changeCode(newcode));
   }
 });
 

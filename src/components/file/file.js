@@ -5,8 +5,9 @@ import { activeFile } from "../../actions";
 import "./file.css";
 
 function File(props) {
+  // 現在のcodeStateとprops.nameが一致したidにactiveFileクラスを与える。
   const activeFile = document.getElementById(props.name + "File");
-  if (props.lang.codeName === props.name) {
+  if (props.code.codeName === props.name) {
     if (activeFile) {
       activeFile.classList.add("activeFile");
     }
@@ -15,6 +16,8 @@ function File(props) {
       activeFile.classList.remove("activeFile");
     }
   }
+
+  // fileComponentのreturn
   return (
     <div
       className={"file"}
@@ -28,11 +31,12 @@ function File(props) {
   );
 }
 
-const mapStateToProps = state => ({ lang: state.lang, active: state.active });
+// Stateの受け取りと実行
+const mapStateToProps = state => ({ code: state.code, active: state.active });
 const mapDispatchToProps = dispatch => ({
-  onFileClick(lang) {
-    dispatch(changeCode(lang));
-    dispatch(activeFile(lang));
+  onFileClick(code) {
+    dispatch(changeCode(code));
+    dispatch(activeFile(code));
   }
 });
 

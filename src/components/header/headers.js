@@ -1,3 +1,4 @@
+// headerの情報まとめ。
 export const Headers = [
   { name: "PHP", info: "¥WelcomeToMyPortfolio¥Skill¥PHP" },
   { name: "Ruby", info: "¥WelcomeToMyPortfolio¥Skill¥Ruby" },

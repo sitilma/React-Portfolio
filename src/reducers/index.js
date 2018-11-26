@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import lang from "./lang";
+import code from "./code";
 import active from "./active";
 
-export default combineReducers({ lang, active });
+export default combineReducers({ code, active });

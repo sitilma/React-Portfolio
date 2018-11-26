@@ -1,14 +1,14 @@
-export const LANG = "LANG";
+export const CODE = "CODE";
 export const ACTIVE = "ACTIVE";
 export const DELETEACTIVE = "DELETEACTIVE";
 
-export const changeCode = lang => ({ type: LANG, lang });
-export const activeFile = lang => ({
+export const changeCode = code => ({ type: CODE, code });
+export const activeFile = code => ({
   type: ACTIVE,
-  index: lang,
-  lang
+  index: code,
+  code
 });
-export const deleteActiveFile = deletelang => ({
+export const deleteActiveFile = deletecode => ({
   type: DELETEACTIVE,
-  deletelang
+  deletecode
 });
