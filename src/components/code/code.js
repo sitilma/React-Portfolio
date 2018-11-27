@@ -9,14 +9,14 @@ function Code(props) {
   function defaultCode() {
     if (codeState === undefined) {
       return (
-        <div className="default">
+        <div className="code default">
           <h1 className={"defaultTop"}>Welcome To MyPortfolio</h1>
         </div>
       );
     }
   }
   return (
-    <React.Fragment>
+    <div className={"codeContainer"}>
       {Codes.map(code => {
         if (code.id === codeState) {
           const Number = Array.from(Array(code.number).keys());
@@ -34,7 +34,7 @@ function Code(props) {
         return null;
       })}
       {defaultCode()}
-    </React.Fragment>
+    </div>
   );
 }
 

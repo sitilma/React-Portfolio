@@ -1,0 +1,33 @@
+.terminalContainer {
+  border-top: 1px solid #7b7b7b;
+  background-color: #090a0a;
+  height: 35%;
+  width: 100%;
+}
+
+.terminalHeader {
+  color: #dedede;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.terminalHeader > p {
+  margin-left: 20px;
+  display: inline;
+  border-bottom: 1px solid #7b7b7b;
+}
+
+.terminalContent {
+  margin-left: 15px;
+  margin-top: 10px;
+}
+.terminalText {
+  color: #ffff38;
+}
+
+.terminalGit {
+  color: #38b5e4;
+}
+
+.terminalInput {
+  color: white;
+}

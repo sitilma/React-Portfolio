@@ -5,6 +5,7 @@ import Folder from "./folder/folder";
 import File from "./file/file";
 import Code from "./code/code";
 import Head from "./header/head";
+import Terminal from "./terminal/terminal";
 
 // info
 const WELCOME = "¥WelcomeToMyPortfolio";
@@ -22,17 +23,14 @@ class App extends Component {
 
   // componentが再描画されると呼び出される。"activeHeader"を取り除き現在のcodeHeaderに"activeHeader"を与える。
   componentDidUpdate() {
-    console.log("componentDidMount");
     const prevHeader = document.getElementsByClassName("activeHeader");
     const activeHeader = document.getElementById(
       this.props.code.codeName + "Header"
     );
     if (prevHeader[0]) {
-      console.log("prevHeader");
       prevHeader[0].classList.remove("activeHeader");
     }
     if (activeHeader) {
-      console.log("activeHeader");
       activeHeader.classList.add("activeHeader");
     }
   }
@@ -60,6 +58,7 @@ class App extends Component {
           </div>
           <div className="light-container">
             <Code />
+            <Terminal />
           </div>
         </div>
       </div>
