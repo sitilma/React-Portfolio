@@ -4,11 +4,9 @@
   right: 0;
   bottom: 0;
   left: 0;
-  margin: auto;
   height: 100%;
   background: rgba(38, 38, 38, 0.92);
   border: 1px solid #555;
-  overflow: hidden;
 }
 
 .flex {

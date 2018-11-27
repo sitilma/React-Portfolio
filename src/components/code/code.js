@@ -10,7 +10,7 @@ function Code(props) {
     if (codeState === undefined) {
       return (
         <div className="code default">
-          <h1 className={"defaultTop"}>Welcome To MyPortfolio</h1>
+          <h1 className={"defaultTop"}>Welcome To MyPortfolio Site!</h1>
         </div>
       );
     }
@@ -19,11 +19,11 @@ function Code(props) {
     <div className={"codeContainer"}>
       {Codes.map(code => {
         if (code.id === codeState) {
-          const Number = Array.from(Array(code.number).keys());
+          const Numbers = Array.from(Array(code.number).keys());
           return (
             <React.Fragment key={codeState}>
               <ul className="number">
-                {Number.map(number => {
+                {Numbers.map(number => {
                   return <li key={number + 1}>{number + 1}</li>;
                 })}
               </ul>

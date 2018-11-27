@@ -1,8 +1,7 @@
 .codeContainer {
-  width: auto;
+  width: 100%;
   height: 65%;
   background-color: #090a0a;
-  flex-basis: 10000px;
   display: flex;
 }
 
@@ -34,4 +33,13 @@
 
 .code > a:hover {
   color: blue;
+}
+
+.default {
+  text-align: left;
+}
+
+.defaultTop {
+  border-bottom: 1px solid #e2e2e2;
+  display: inline;
 }
