@@ -75,7 +75,7 @@ const SKILL = [
 ];
 
 const WORK = [
-  { name: "igo", info: `${WELCOMEWORK}¥igo` },
+  { name: "GoApp", info: `${WELCOMEWORK}¥GoApp` },
   { name: "Markdown", info: `${WELCOMEWORK}¥Markdown` },
   { name: "Portfolio", info: `${WELCOMEWORK}¥Portfolio` },
   { name: "Laravel", info: `${WELCOMEWORK}¥Laravel` }

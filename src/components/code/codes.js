@@ -46,40 +46,109 @@ export const Codes = [
     )
   },
   {
-    id: "igo",
-    number: 5,
+    id: "GoApp",
+    number: 15,
     body: (
-      <div className="code" key={"igo"}>
-        <p>igo</p>
-        <p>hoge</p>
-        <p>棋譜投稿するやつ</p>
-        <a href={"https://net-go.herokuapp.com/"}>ネット碁会所</a>
+      <div className="code" key={"GoApp"}>
+        <p className="textYellow">## ネット碁会所</p>
+        <br />
+        <p>
+          Heroku:{" "}
+          <a
+            href="https://net-go.herokuapp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ネット碁会所
+          </a>
+        </p>
+        <p>
+          GitHub:{" "}
+          <a
+            href="https://github.com/sitilma/Go-App"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Go-App
+          </a>
+        </p>
+        <br />
+        <p>
+          プログラミングを学び始めて作り上げたWebアプリであり、Railsで制作しました。
+        </p>
+        <p>囲碁の棋譜を投稿し、語り合うWebサービスです。</p>
+        <p>
+          棋譜の部分はJavaScriptのライブラリでできており、棋譜データがあれば簡単に投稿、閲覧ができるようになっています。
+        </p>
+        <p>
+          今後、大幅な改修を行いサービスとして運用していきたいという思いもあります。
+        </p>
       </div>
     )
   },
   {
     id: "Markdown",
-    number: 5,
+    number: 15,
     body: (
       <div className="code" key={"Markdown"}>
-        <p>markdown</p>
-        <p>hoge</p>
-        <p>マークダウンで書くやつ</p>
-        <a href={"https://a-markdown.herokuapp.com/"}>マークダウン</a>
+        <p className="textYellow">## Article Markdown</p>
+        <br />
+        <p>
+          Heroku:{" "}
+          <a
+            href="https://a-markdown.herokuapp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            マークダウン
+          </a>
+        </p>
+        <p>
+          GitHub:{" "}
+          <a
+            href="https://github.com/sitilma/Article-Markdown"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Article-Markdown
+          </a>
+        </p>
+        <br />
+        <p>Railsで制作したMarkdown形式の記事投稿サービスです。</p>
+        <p>Qiitaを参考にして作成しました。</p>
+        <p>
+          初めて製作したそれなりの規模のサービスであり、enumやscopeで様々な機能を作ったのは大きな経験となりました。
+        </p>
+        <p>下書き機能や編集履歴機能等を備えています。</p>
       </div>
     )
   },
   {
     id: "Portfolio",
-    number: 4,
+    number: 14,
     body: (
       <div className="code" key={"Portfolio"}>
         <p className="textYellow">## Portfolio Site</p>
         <br />
+        <p>
+          GitHub:{" "}
+          <a
+            href="https://github.com/sitilma/React-Portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React-Portfolio
+          </a>
+        </p>
+        <br />
         <p>このサイトです。React.jsで実装しました。</p>
+        <p>reduxでstateを管理し現在表示されている部分を特定しています。</p>
         <p>コンセプトはテキストエディタ風のポートフォリオサイト。</p>
         <p>
           今後要素を追加していくことを考え、できるだけComponentにまとめて作成しました。
+        </p>
+        <p>
+          コンセプトがテキストエディタということもあり、レスポンシブ対応に出来なかったのが心残りです。
         </p>
       </div>
     )
@@ -105,7 +174,14 @@ export const Codes = [
         <p>Name: 西村 爽(Sou Nishimura)</p>
         <p>Birth: 1997/7/19</p>
         <p>
-          GitHub: <a href={"https://github.com/sitilma"}>Sou</a>
+          GitHub:{" "}
+          <a
+            href={"https://github.com/sitilma"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Sou
+          </a>
         </p>
         <p>Mail: sounishimura7@gmail.com</p>
       </div>
