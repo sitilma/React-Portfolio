@@ -12,7 +12,6 @@
   border: 0.1px solid #090a0a;
   position: relative;
   display: flex;
-  box-sizing: border-box;
 }
 
 .activeHeader {
