@@ -6,42 +6,79 @@ export const Codes = [
     number: 4,
     body: (
       <div className="code" key={"PHP"}>
-        <p>php</p>
-        <p>hoge</p>
-        <a href={"http://php.net/manual/ja/index.php"}>phpドキュメント</a>
+        <p className="textYellow">## PHP</p>
+        <br />
       </div>
     )
   },
   {
     id: "Ruby",
-    number: 4,
+    number: 6,
     body: (
       <div className="code" key={"Ruby"}>
-        <p>ruby</p>
-        <p>hoge</p>
-        <p>繰り返しが書きやすい</p>
+        <p className="textYellow">## Ruby</p>
+        <br />
+        <p>
+          最初に学んだプログラミング言語であり、非常に書きやすいと感じています。
+        </p>
+        <p>
+          RubyのフレームワークであるRuby on Railsを使った
+          <a
+            href="https://net-go.herokuapp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ネット碁会所
+          </a>
+          や
+          <a
+            href="https://a-markdown.herokuapp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Markdown
+          </a>
+          の開発などに使用しました。
+        </p>
       </div>
     )
   },
   {
     id: "JavaScript",
-    number: 4,
+    number: 14,
     body: (
       <div className="code" key={"JavaScript"}>
-        <p>javascript</p>
-        <p>hoge</p>
-        <p>ES6って凄い</p>
+        <p className="textYellow">## JavaScript</p>
+        <br />
+        <p>
+          出来ることが多く、Web制作に必須であり、非常に学びがいのある言語だと思います。
+        </p>
+        <p>このサイトもJavaScriptとそのライブラリであるReactで制作しました。</p>
+        <p>
+          個人的にはGASでスプレッドシートを操作して入力を自動化するなどに使用しています。
+        </p>
+        <br />
+        <p>
+          Node.jsでのサーバーサイドやReact Native,Vue
+          Nativeでのネイティブアプリ制作ができることもあり非常に興味をひかれています。
+        </p>
       </div>
     )
   },
   {
     id: "Docker",
-    number: 4,
+    number: 6,
     body: (
       <div className="code" key={"Docker"}>
-        <p>docker</p>
-        <p>hoge</p>
-        <p>Compose使ってる。</p>
+        <p className="textYellow">## Docker</p>
+        <br />
+        <p>
+          主にDockerやDocker
+          Composeを用いてコンテナ環境での開発のために使用しています。
+        </p>
+        <p>
+          一度環境を整備してしまえば、簡単に使いまわせるのは素晴らしいです。
+        </p>
       </div>
     )
   },
@@ -100,7 +137,7 @@ export const Codes = [
             target="_blank"
             rel="noopener noreferrer"
           >
-            マークダウン
+            Markdown
           </a>
         </p>
         <p>
