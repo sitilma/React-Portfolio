@@ -92,11 +92,11 @@ export const Codes = [
     )
   },
   {
-    id: "README",
+    id: "About",
     number: 4,
     body: (
-      <div className="code" key={"README"}>
-        <p>readme</p>
+      <div className="code" key={"About"}>
+        <p>About</p>
         <p>hoge</p>
         <p>
           テキストエディタっぽく、コンソールとかつけようかと思ったけど難しすぎる

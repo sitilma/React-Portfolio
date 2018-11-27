@@ -52,7 +52,7 @@ class App extends Component {
               </div>
               <Folder files={SKILL} name={"Skill"} info={WELCOMESKILL} />
               <Folder files={WORK} name={"Work"} info={WELCOMEWORK} />
-              <File name={"README"} info={`${WELCOME}¥README`} />
+              <File name={"About"} info={`${WELCOME}¥About`} />
               <File name={"Contact"} info={`${WELCOME}¥Contact`} />
             </div>
           </div>

@@ -8,6 +8,6 @@ export const Headers = [
   { name: "Markdown", info: "¥WelcomeToMyPortfolio¥WORK¥Markdown" },
   { name: "Portfolio", info: "¥WelcomeToMyPortfolio¥WORK¥Portfolio" },
   { name: "Laravel", info: "¥WelcomeToMyPortfolio¥WORK¥Laravel" },
-  { name: "README", info: "¥WelcomeToMyPortfolio¥README" },
+  { name: "About", info: "¥WelcomeToMyPortfolio¥About" },
   { name: "Contact", info: "¥WelcomeToMyPortfolio¥Contact" }
 ];
