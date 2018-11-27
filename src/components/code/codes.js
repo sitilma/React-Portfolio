@@ -74,9 +74,13 @@ export const Codes = [
     number: 4,
     body: (
       <div className="code" key={"Portfolio"}>
-        <p>portfolio</p>
-        <p>hoge</p>
-        <p>このサイト</p>
+        <p className="textYellow">## Portfolio Site</p>
+        <br />
+        <p>このサイトです。React.jsで実装しました。</p>
+        <p>コンセプトはテキストエディタ風のポートフォリオサイト。</p>
+        <p>
+          今後要素を追加していくことを考え、できるだけComponentにまとめて作成しました。
+        </p>
       </div>
     )
   },
@@ -93,24 +97,29 @@ export const Codes = [
   },
   {
     id: "About",
-    number: 4,
+    number: 7,
     body: (
       <div className="code" key={"About"}>
-        <p>About</p>
-        <p>hoge</p>
+        <p className="textYellow">## MyProfile</p>
+        <br />
+        <p>Name: 西村 爽(Sou Nishimura)</p>
+        <p>Birth: 1997/7/19</p>
         <p>
-          テキストエディタっぽく、コンソールとかつけようかと思ったけど難しすぎる
+          GitHub: <a href={"https://github.com/sitilma"}>Sou</a>
         </p>
+        <p>Mail: sounishimura7@gmail.com</p>
       </div>
     )
   },
   {
     id: "Contact",
-    number: 4,
+    number: 5,
     body: (
       <div className="code" key={"Contact"}>
-        <p>Contact</p>
-        <p>hoge</p>
+        <p className="textYellow">## Contact</p>
+        <br />
+        <p>メールアドレスからお問い合わせください。</p>
+        <p>sounishimura7@gmail.com</p>
       </div>
     )
   }

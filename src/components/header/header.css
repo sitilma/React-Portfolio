@@ -12,6 +12,7 @@
   border: 0.1px solid #090a0a;
   position: relative;
   display: flex;
+  box-sizing: border-box;
 }
 
 .activeHeader {
@@ -30,7 +31,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 24px;
+  width: 16px;
   height: 30px;
   line-height: 2;
   z-index: 0;

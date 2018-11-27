@@ -11,7 +11,7 @@
   padding: 5px;
   color: #efefef;
   line-height: 1.5;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .number {
@@ -19,19 +19,19 @@
   padding: 5px;
   text-align: right;
   color: #ababab;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
-.code > a:visited {
+.code a:visited {
   color: #3ab6ff;
 }
 
-.code > a:link {
+.code a:link {
   color: #3ab6ff;
 }
 
-.code > a:hover {
+.code a:hover {
   color: blue;
 }
 
@@ -42,4 +42,8 @@
 .defaultTop {
   border-bottom: 1px solid #e2e2e2;
   display: inline;
+}
+
+.textYellow {
+  color: yellow;
 }
