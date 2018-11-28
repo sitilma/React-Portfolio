@@ -210,56 +210,54 @@ export const Codes = [
         <br />
         <p>Name: 西村 爽(Sou Nishimura)</p>
         <p>Birth: 1997/7/19</p>
+        <p>Mail: sounishimura7@gmail.com</p>
+        <br />
         <p>
-          GitHub:{" "}
           <a
             href={"https://github.com/sitilma"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Sou
+            GitHub
           </a>
         </p>
         <p>
-          Qiita:{" "}
           <a
             href={"https://qiita.com/sitilma"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Sitilma
+            Qiita
           </a>
         </p>
         <p>
-          Twitter:{" "}
           <a
             href={"https://twitter.com/sitilma"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Sitilma
+            Twitter
           </a>
         </p>
-        <p>Mail: sounishimura7@gmail.com</p>
       </div>
     )
   },
   {
     id: "Contact",
-    number: 6,
+    number: 7,
     body: (
       <div className="code" key={"Contact"}>
         <p className="textYellow">## Contact</p>
         <br />
         <p>Twitterもしくはメールアドレスからお問い合わせください。</p>
+        <br />
         <p>
-          Twitter:{" "}
           <a
             href={"https://twitter.com/sitilma"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Sitilma
+            Twitter
           </a>
         </p>
         <p>sounishimura7@gmail.com</p>
