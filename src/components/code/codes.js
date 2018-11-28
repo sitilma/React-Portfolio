@@ -203,7 +203,7 @@ export const Codes = [
   },
   {
     id: "About",
-    number: 7,
+    number: 10,
     body: (
       <div className="code" key={"About"}>
         <p className="textYellow">## MyProfile</p>
@@ -220,18 +220,48 @@ export const Codes = [
             Sou
           </a>
         </p>
+        <p>
+          Qiita:{" "}
+          <a
+            href={"https://qiita.com/sitilma"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Sitilma
+          </a>
+        </p>
+        <p>
+          Twitter:{" "}
+          <a
+            href={"https://twitter.com/sitilma"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Sitilma
+          </a>
+        </p>
         <p>Mail: sounishimura7@gmail.com</p>
       </div>
     )
   },
   {
     id: "Contact",
-    number: 5,
+    number: 6,
     body: (
       <div className="code" key={"Contact"}>
         <p className="textYellow">## Contact</p>
         <br />
-        <p>メールアドレスからお問い合わせください。</p>
+        <p>Twitterもしくはメールアドレスからお問い合わせください。</p>
+        <p>
+          Twitter:{" "}
+          <a
+            href={"https://twitter.com/sitilma"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Sitilma
+          </a>
+        </p>
         <p>sounishimura7@gmail.com</p>
       </div>
     )

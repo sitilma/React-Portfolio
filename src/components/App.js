@@ -36,6 +36,8 @@ class App extends Component {
   }
 
   render() {
+    // console.log(this.props.active);
+    // console.log(this.props.code);
     return (
       <div className="App">
         <div className="flex">
