@@ -195,9 +195,7 @@ export const Codes = [
     number: 4,
     body: (
       <div className="code" key={"Laravel"}>
-        <p>laravel</p>
-        <p>hoge</p>
-        <p>今やってるやつ</p>
+        <p className="textYellow">## Laravel</p>
       </div>
     )
   },
