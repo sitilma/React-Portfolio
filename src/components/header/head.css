@@ -1,7 +1,6 @@
 #header {
   height: 32px;
-  width: auto;
+  width: 70%;
   background-color: #222323;
-  flex-basis: 10000px;
   display: flex;
 }

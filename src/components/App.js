@@ -9,8 +9,8 @@ import Terminal from "./terminal/terminal";
 
 // info
 const WELCOME = "¥WelcomeToMyPortfolio";
-const WELCOMESKILL = "¥WelcomeToMyPortfolio¥Skill";
-const WELCOMEWORK = "¥WelcomeToMyPortfolio¥Work";
+const WELCOMESKILL = "¥WelcomeToMyPortfolio¥Skills";
+const WELCOMEWORK = "¥WelcomeToMyPortfolio¥Works";
 class App extends Component {
   // portfolioの表示非表示及びテキストの矢印を変える。
   portfolioDropdown() {
@@ -36,8 +36,8 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.active);
-    console.log(this.props.code);
+    // console.log(this.props.active);
+    // console.log(this.props.code);
     return (
       <div className="App">
         <div className="flex">
@@ -50,9 +50,9 @@ class App extends Component {
               <div id={"portfolio"} onClick={this.portfolioDropdown}>
                 <span id={"textTriangle"}>▾</span>WelcomeToMyPortfolio
               </div>
-              <Folder files={SKILL} name={"Skill"} info={WELCOMESKILL} />
-              <Folder files={WORK} name={"Work"} info={WELCOMEWORK} />
-              <File name={"README"} info={`${WELCOME}¥README`} />
+              <Folder files={SKILL} name={"Skills"} info={WELCOMESKILL} />
+              <Folder files={WORK} name={"Works"} info={WELCOMEWORK} />
+              <File name={"About"} info={`${WELCOME}¥About`} />
               <File name={"Contact"} info={`${WELCOME}¥Contact`} />
             </div>
           </div>
@@ -75,7 +75,7 @@ const SKILL = [
 ];
 
 const WORK = [
-  { name: "igo", info: `${WELCOMEWORK}¥igo` },
+  { name: "GoApp", info: `${WELCOMEWORK}¥GoApp` },
   { name: "Markdown", info: `${WELCOMEWORK}¥Markdown` },
   { name: "Portfolio", info: `${WELCOMEWORK}¥Portfolio` },
   { name: "Laravel", info: `${WELCOMEWORK}¥Laravel` }

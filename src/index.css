@@ -6,17 +6,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #090a0a;
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-#root {
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 li {
@@ -28,6 +24,6 @@ p {
   padding: 0;
 }
 
-.none div {
+.none > div {
   display: none;
 }
