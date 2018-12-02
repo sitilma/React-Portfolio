@@ -1,18 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./code.css";
-import { Codes } from "./codes";
+import { Codes, DefaultCode } from "./codes";
 
 function Code(props) {
   const codeState = props.code.codeName;
 
   function defaultCode() {
     if (codeState === undefined) {
-      return (
-        <div className="code default">
-          <h1 className={"defaultTop"}>Welcome To MyPortfolio Site!</h1>
-        </div>
-      );
+      return DefaultCode;
     }
   }
   return (
