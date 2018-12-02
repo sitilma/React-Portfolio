@@ -1,5 +1,10 @@
 import React from "react";
 
+export const DefaultCode = (
+  <div className="code default">
+    <h1 className={"defaultTop"}>Welcome To MyPortfolio Site!</h1>
+  </div>
+);
 export const Codes = [
   {
     id: "PHP",
@@ -183,9 +188,6 @@ export const Codes = [
         <p>コンセプトはテキストエディタ風のポートフォリオサイト。</p>
         <p>
           今後要素を追加していくことを考え、できるだけComponentにまとめて作成しました。
-        </p>
-        <p>
-          コンセプトがテキストエディタということもあり、レスポンシブ対応に出来なかったのが心残りです。
         </p>
       </div>
     )
