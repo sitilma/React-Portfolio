@@ -8,11 +8,13 @@ export const DefaultCode = (
 export const Codes = [
   {
     id: "PHP",
-    number: 4,
+    number: 8,
     body: (
       <div className="code" key={"PHP"}>
         <p className="textYellow">## PHP</p>
         <br />
+        <p>手軽にHTMLに埋め込めるため小さな制作に使うことが多いです。</p>
+        <p>フレームワークを使った開発にはLaravelを使用しています。</p>
       </div>
     )
   },
