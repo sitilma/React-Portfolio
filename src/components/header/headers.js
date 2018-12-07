@@ -7,7 +7,7 @@ export const Headers = [
   { name: "GoApp", info: "¥WelcomeToMyPortfolio¥Works¥GoApp" },
   { name: "Markdown", info: "¥WelcomeToMyPortfolio¥Works¥Markdown" },
   { name: "Portfolio", info: "¥WelcomeToMyPortfolio¥Works¥Portfolio" },
-  { name: "Laravel", info: "¥WelcomeToMyPortfolio¥Works¥Laravel" },
+  { name: "SPA-BBS", info: "¥WelcomeToMyPortfolio¥Works¥SPA-BBS" },
   { name: "About", info: "¥WelcomeToMyPortfolio¥About" },
   { name: "Contact", info: "¥WelcomeToMyPortfolio¥Contact" }
 ];

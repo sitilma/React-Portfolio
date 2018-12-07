@@ -6,11 +6,10 @@ import File from "./file/file";
 import Code from "./code/code";
 import Head from "./header/head";
 import Terminal from "./terminal/terminal";
+import { SKILL, WORK } from "../components/code/codes";
 
 // info
 const WELCOME = "¥WelcomeToMyPortfolio";
-const WELCOMESKILL = "¥WelcomeToMyPortfolio¥Skills";
-const WELCOMEWORK = "¥WelcomeToMyPortfolio¥Works";
 class App extends Component {
   // portfolioの表示非表示及びテキストの矢印を変える。
   portfolioDropdown() {
@@ -50,8 +49,8 @@ class App extends Component {
               <div id={"portfolio"} onClick={this.portfolioDropdown}>
                 <span id={"textTriangle"}>▾</span>WelcomeToMyPortfolio
               </div>
-              <Folder files={SKILL} name={"Skills"} info={WELCOMESKILL} />
-              <Folder files={WORK} name={"Works"} info={WELCOMEWORK} />
+              <Folder files={SKILL} name={"Skills"} />
+              <Folder files={WORK} name={"Works"} />
               <File name={"About"} info={`${WELCOME}¥About`} />
               <File name={"Contact"} info={`${WELCOME}¥Contact`} />
             </div>
@@ -66,20 +65,6 @@ class App extends Component {
   }
 }
 
-// folder構成の情報まとめ。
-const SKILL = [
-  { name: "PHP", info: `${WELCOMESKILL}¥PHP` },
-  { name: "Ruby", info: `${WELCOMESKILL}¥Ruby` },
-  { name: "JavaScript", info: `${WELCOMESKILL}¥JavaScript` },
-  { name: "Docker", info: `${WELCOMESKILL}¥Docker` }
-];
-
-const WORK = [
-  { name: "GoApp", info: `${WELCOMEWORK}¥GoApp` },
-  { name: "Markdown", info: `${WELCOMEWORK}¥Markdown` },
-  { name: "Portfolio", info: `${WELCOMEWORK}¥Portfolio` },
-  { name: "Laravel", info: `${WELCOMEWORK}¥Laravel` }
-];
 const mapStateToProps = state => ({ code: state.code, active: state.active });
 
 export default connect(mapStateToProps)(App);

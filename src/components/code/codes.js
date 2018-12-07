@@ -1,7 +1,7 @@
 import React from "react";
 
 export const DefaultCode = (
-  <div className="code default">
+  <div className="code codeDefault">
     <h1 className={"defaultTop"}>Welcome To MyPortfolio Site!</h1>
   </div>
 );
@@ -15,6 +15,16 @@ export const Codes = [
         <br />
         <p>手軽にHTMLに埋め込めるため小さな制作に使うことが多いです。</p>
         <p>フレームワークを使った開発にはLaravelを使用しています。</p>
+        <p>Laravel&React-routeでSPA掲示板作成をしました。</p>
+        <p>
+          <a
+            href="https://github.com/sitilma/Laravel-React/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github
+          </a>
+        </p>
       </div>
     )
   },
@@ -195,11 +205,27 @@ export const Codes = [
     )
   },
   {
-    id: "Laravel",
-    number: 4,
+    id: "SPA-BBS",
+    number: 10,
     body: (
-      <div className="code" key={"Laravel"}>
-        <p className="textYellow">## Laravel</p>
+      <div className="code" key={"SPA-BBS"}>
+        <p className="textYellow">## SPA-BBS</p>
+        <br />
+        <p>
+          <a
+            href="https://github.com/sitilma/Laravel-React/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github
+          </a>
+        </p>
+        <br />
+        <p>Laravel&Reactで作成したSPA掲示板です。</p>
+        <p>
+          バックエンドはLaravelのAPIでjson形式のデータを渡し、フロントのReactがそれを受け取り表示する形にしています。
+        </p>
+        <p>現在AWS:EC2でデプロイ中です。</p>
       </div>
     )
   },
@@ -234,11 +260,11 @@ export const Codes = [
         </p>
         <p>
           <a
-            href={"https://twitter.com/sitilma"}
+            href={"https://www.wantedly.com/users/81605285"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Twitter
+            wantedly
           </a>
         </p>
       </div>
@@ -251,19 +277,37 @@ export const Codes = [
       <div className="code" key={"Contact"}>
         <p className="textYellow">## Contact</p>
         <br />
-        <p>Twitterもしくはメールアドレスからお問い合わせください。</p>
+        <p>wantedlyもしくはメールアドレスからお問い合わせください。</p>
         <br />
         <p>
           <a
-            href={"https://twitter.com/sitilma"}
+            href={"https://www.wantedly.com/users/81605285"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Twitter
+            wantedly
           </a>
         </p>
         <p>sounishimura7@gmail.com</p>
       </div>
     )
   }
+];
+
+const WELCOMESKILL = "¥WelcomeToMyPortfolio¥Skills";
+const WELCOMEWORK = "¥WelcomeToMyPortfolio¥Works";
+
+// folder構成の情報まとめ。
+export const SKILL = [
+  { name: "PHP", info: `${WELCOMESKILL}¥PHP` },
+  { name: "Ruby", info: `${WELCOMESKILL}¥Ruby` },
+  { name: "JavaScript", info: `${WELCOMESKILL}¥JavaScript` },
+  { name: "Docker", info: `${WELCOMESKILL}¥Docker` }
+];
+
+export const WORK = [
+  { name: "GoApp", info: `${WELCOMEWORK}¥GoApp` },
+  { name: "Markdown", info: `${WELCOMEWORK}¥Markdown` },
+  { name: "Portfolio", info: `${WELCOMEWORK}¥Portfolio` },
+  { name: "SPA-BBS", info: `${WELCOMEWORK}¥SPA-BBS` }
 ];

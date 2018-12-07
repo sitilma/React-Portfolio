@@ -35,8 +35,9 @@
   color: blue;
 }
 
-.default {
+.codeDefault {
   text-align: left;
+  margin: 0;
 }
 
 .defaultTop {
