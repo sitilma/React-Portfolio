@@ -14,7 +14,7 @@ function Code(props) {
   return (
     <div className={"codeContainer"}>
       {Codes.map(code => {
-        if (code.id === codeState) {
+        if (code.name === codeState) {
           const Numbers = Array.from(Array(code.number).keys());
           return (
             <React.Fragment key={codeState}>

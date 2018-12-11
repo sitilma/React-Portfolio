@@ -1,5 +1,23 @@
 import React from "react";
 
+const WELCOMESKILL = "¥WelcomeToMyPortfolio¥Skills";
+const WELCOMEWORK = "¥WelcomeToMyPortfolio¥Works";
+
+// folder構成の情報まとめ。
+export const SKILL = [
+  { name: "PHP", info: `${WELCOMESKILL}¥PHP` },
+  { name: "Ruby", info: `${WELCOMESKILL}¥Ruby` },
+  { name: "JavaScript", info: `${WELCOMESKILL}¥JavaScript` },
+  { name: "Docker", info: `${WELCOMESKILL}¥Docker` }
+];
+
+export const WORK = [
+  { name: "GoApp", info: `${WELCOMEWORK}¥GoApp` },
+  { name: "Markdown", info: `${WELCOMEWORK}¥Markdown` },
+  { name: "Portfolio", info: `${WELCOMEWORK}¥Portfolio` },
+  { name: "SPA-BBS", info: `${WELCOMEWORK}¥SPA-BBS` }
+];
+
 export const DefaultCode = (
   <div className="code codeDefault">
     <h1 className={"defaultTop"}>Welcome To MyPortfolio Site!</h1>
@@ -7,7 +25,7 @@ export const DefaultCode = (
 );
 export const Codes = [
   {
-    id: "PHP",
+    name: "PHP",
     number: 8,
     body: (
       <div className="code" key={"PHP"}>
@@ -29,7 +47,7 @@ export const Codes = [
     )
   },
   {
-    id: "Ruby",
+    name: "Ruby",
     number: 6,
     body: (
       <div className="code" key={"Ruby"}>
@@ -61,7 +79,7 @@ export const Codes = [
     )
   },
   {
-    id: "JavaScript",
+    name: "JavaScript",
     number: 14,
     body: (
       <div className="code" key={"JavaScript"}>
@@ -83,7 +101,7 @@ export const Codes = [
     )
   },
   {
-    id: "Docker",
+    name: "Docker",
     number: 6,
     body: (
       <div className="code" key={"Docker"}>
@@ -100,7 +118,7 @@ export const Codes = [
     )
   },
   {
-    id: "GoApp",
+    name: "GoApp",
     number: 15,
     body: (
       <div className="code" key={"GoApp"}>
@@ -141,7 +159,7 @@ export const Codes = [
     )
   },
   {
-    id: "Markdown",
+    name: "Markdown",
     number: 15,
     body: (
       <div className="code" key={"Markdown"}>
@@ -178,7 +196,7 @@ export const Codes = [
     )
   },
   {
-    id: "Portfolio",
+    name: "Portfolio",
     number: 14,
     body: (
       <div className="code" key={"Portfolio"}>
@@ -205,7 +223,7 @@ export const Codes = [
     )
   },
   {
-    id: "SPA-BBS",
+    name: "SPA-BBS",
     number: 10,
     body: (
       <div className="code" key={"SPA-BBS"}>
@@ -230,7 +248,7 @@ export const Codes = [
     )
   },
   {
-    id: "About",
+    name: "About",
     number: 10,
     body: (
       <div className="code" key={"About"}>
@@ -271,7 +289,7 @@ export const Codes = [
     )
   },
   {
-    id: "Contact",
+    name: "Contact",
     number: 7,
     body: (
       <div className="code" key={"Contact"}>
@@ -292,22 +310,4 @@ export const Codes = [
       </div>
     )
   }
-];
-
-const WELCOMESKILL = "¥WelcomeToMyPortfolio¥Skills";
-const WELCOMEWORK = "¥WelcomeToMyPortfolio¥Works";
-
-// folder構成の情報まとめ。
-export const SKILL = [
-  { name: "PHP", info: `${WELCOMESKILL}¥PHP` },
-  { name: "Ruby", info: `${WELCOMESKILL}¥Ruby` },
-  { name: "JavaScript", info: `${WELCOMESKILL}¥JavaScript` },
-  { name: "Docker", info: `${WELCOMESKILL}¥Docker` }
-];
-
-export const WORK = [
-  { name: "GoApp", info: `${WELCOMEWORK}¥GoApp` },
-  { name: "Markdown", info: `${WELCOMEWORK}¥Markdown` },
-  { name: "Portfolio", info: `${WELCOMEWORK}¥Portfolio` },
-  { name: "SPA-BBS", info: `${WELCOMEWORK}¥SPA-BBS` }
 ];
