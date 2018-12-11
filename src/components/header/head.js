@@ -2,7 +2,7 @@ import React from "react";
 import "./head.css";
 import Header from "../header/header";
 import { connect } from "react-redux";
-import { Headers } from "./headers";
+import { Codes } from "../codes";
 
 function Head(props) {
   const newHeaders = [];
@@ -10,7 +10,7 @@ function Head(props) {
   // forEachとmapで繰り返し処理を行い、activeStateとHeaders.nameが一致すればnewHeadersに入れる。これによってクリック時headerが順番に増えていく。
   props.active.forEach(activeMapHeaders);
   function activeMapHeaders(key) {
-    Headers.map(header => {
+    Codes.map(header => {
       if (key === header.name) {
         return newHeaders.push(header);
       }

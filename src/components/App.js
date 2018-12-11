@@ -6,7 +6,7 @@ import File from "./file/file";
 import Code from "./code/code";
 import Head from "./header/head";
 import Terminal from "./terminal/terminal";
-import { SKILL, WORK } from "../components/code/codes";
+import { SKILL, WORK } from "./codes";
 
 // info
 const WELCOME = "¥WelcomeToMyPortfolio";
