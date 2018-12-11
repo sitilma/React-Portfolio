@@ -2,7 +2,7 @@ import React from "react";
 import "./head.css";
 import Header from "../header/header";
 import { connect } from "react-redux";
-import { Codes } from "../code/codes";
+import { Codes } from "../codes";
 
 function Head(props) {
   const newHeaders = [];

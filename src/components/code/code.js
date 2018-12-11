@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./code.css";
-import { Codes, DefaultCode } from "./codes";
+import { Codes, DefaultCode } from "../codes";
 
 function Code(props) {
   const codeState = props.code.codeName;
