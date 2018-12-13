@@ -7,16 +7,14 @@ import { Codes } from "../codes";
 function Head(props) {
   const newHeaders = [];
 
-  // forEachとmapで繰り返し処理を行い、activeStateとHeaders.nameが一致すればnewHeadersに入れる。これによってクリック時headerが順番に増えていく。
-  props.active.forEach(activeMapHeaders);
-  function activeMapHeaders(key) {
+  props.active.forEach(key => {
     Codes.map(header => {
       if (key === header.name) {
         return newHeaders.push(header);
       }
       return null;
     });
-  }
+  });
 
   return (
     <div id={"header"}>

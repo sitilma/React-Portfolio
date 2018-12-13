@@ -11,24 +11,24 @@ function Header(props) {
   const headerWidth = 100 / props.active.size + "%";
 
   // 子要素がクリックされても親のClickEventは発火しないように。
-  function onCloseClick(e) {
+  const onCloseClick = e => {
     e.stopPropagation();
     closeClickEvent(props.name);
-  }
+  };
 
   // dispatchに渡す。activeStateから削除し、現在のCodeがprops.nameと一致すればcodeを変更する。
-  function closeClickEvent(currentcode) {
+  const closeClickEvent = currentcode => {
     props.deleteActiveFile(currentcode, CODENAME);
     newCodeEvent(currentcode);
-  }
+  };
   // ActiveStateの中身がまだ存在すればそれを新しいCodeStateにする。
-  function newCodeEvent(currentcode) {
+  const newCodeEvent = currentcode => {
     if (CODENAME === currentcode) {
       const newcode =
         CODENAME === nextcode ? activeValue.next().value : nextcode;
       props.newCodeName(newcode);
     }
-  }
+  };
 
   return (
     <React.Fragment>

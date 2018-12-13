@@ -6,26 +6,26 @@ function Folder(props) {
   const folderName = props.name;
 
   // FolderをClickしたときに行う処理
-  function folderHiddenSet() {
+  const folderHiddenSet = () => {
     if (document.getElementById(folderName)) {
       folderHidden();
       folderChangeIcon();
     }
-  }
+  };
 
   // noneクラスを与える。noneクラスは子要素のdivを非表示にする
-  function folderHidden() {
+  const folderHidden = () => {
     let fileParentElement = document.getElementById(folderName)
       .lastElementChild;
     fileParentElement.classList.toggle("none");
-  }
+  };
 
   // folderの孫要素の<i>のクラスを変更する。
-  function folderChangeIcon() {
+  const folderChangeIcon = () => {
     let folderElement = document.getElementById(folderName).firstElementChild
       .firstElementChild;
     folderElement.classList.toggle("fa-folder-open");
-  }
+  };
 
   return (
     <div id={folderName}>
