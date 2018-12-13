@@ -5,7 +5,7 @@ const initialState = { codeName: undefined };
 export default (state = initialState, action) => {
   switch (action.type) {
     case CODE:
-      return { codeName: action.code };
+      return { codeName: action.codeName };
     default:
       return state;
   }

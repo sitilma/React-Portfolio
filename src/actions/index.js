@@ -2,12 +2,9 @@ export const CODE = "CODE";
 export const ACTIVE = "ACTIVE";
 export const DELETEACTIVE = "DELETEACTIVE";
 
-export const changeCode = code => ({ type: CODE, code });
-export const activeFile = code => ({
-  type: ACTIVE,
-  code
-});
-export const deleteActiveFile = deletecode => ({
+export const changeCode = codeName => ({ type: CODE, codeName });
+export const activeFile = activeFileName => ({ type: ACTIVE, activeFileName });
+export const deleteActiveFile = deleteFileName => ({
   type: DELETEACTIVE,
-  deletecode
+  deleteFileName
 });
