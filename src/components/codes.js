@@ -28,9 +28,8 @@ export const Codes = [
   {
     name: "PHP",
     info: `${WELCOMESKILL}¥PHP`,
-    number: 8,
     body: (
-      <div className="code" key={"PHP"}>
+      <div>
         <p className="textYellow">## PHP</p>
         <br />
         <p>手軽にHTMLに埋め込めるため小さな制作に使うことが多いです。</p>
@@ -51,9 +50,8 @@ export const Codes = [
   {
     name: "Ruby",
     info: `${WELCOMESKILL}¥Ruby`,
-    number: 6,
     body: (
-      <div className="code" key={"Ruby"}>
+      <div>
         <p className="textYellow">## Ruby</p>
         <br />
         <p>
@@ -84,9 +82,8 @@ export const Codes = [
   {
     name: "JavaScript",
     info: `${WELCOMESKILL}¥JavaScript`,
-    number: 14,
     body: (
-      <div className="code" key={"JavaScript"}>
+      <div>
         <p className="textYellow">## JavaScript</p>
         <br />
         <p>
@@ -107,9 +104,8 @@ export const Codes = [
   {
     name: "Docker",
     info: `${WELCOMESKILL}¥Docker`,
-    number: 6,
     body: (
-      <div className="code" key={"Docker"}>
+      <div>
         <p className="textYellow">## Docker</p>
         <br />
         <p>
@@ -125,9 +121,8 @@ export const Codes = [
   {
     name: "GoApp",
     info: `${WELCOMEWORK}¥GoApp`,
-    number: 15,
     body: (
-      <div className="code" key={"GoApp"}>
+      <div>
         <p className="textYellow">## ネット碁会所</p>
         <br />
         <p>
@@ -167,9 +162,8 @@ export const Codes = [
   {
     name: "Markdown",
     info: `${WELCOMEWORK}¥Markdown`,
-    number: 15,
     body: (
-      <div className="code" key={"Markdown"}>
+      <div>
         <p className="textYellow">## Article Markdown</p>
         <br />
         <p>
@@ -205,9 +199,8 @@ export const Codes = [
   {
     name: "Portfolio",
     info: `${WELCOMEWORK}¥Portfoilo`,
-    number: 14,
     body: (
-      <div className="code" key={"Portfolio"}>
+      <div>
         <p className="textYellow">## Portfolio Site</p>
         <br />
         <p>
@@ -233,9 +226,8 @@ export const Codes = [
   {
     name: "SPA-BBS",
     info: `${WELCOMEWORK}¥SPA-BBS`,
-    number: 10,
     body: (
-      <div className="code" key={"SPA-BBS"}>
+      <div>
         <p className="textYellow">## SPA-BBS</p>
         <br />
         <p>
@@ -259,9 +251,8 @@ export const Codes = [
   {
     name: "About",
     info: `${WELCOME}¥About`,
-    number: 10,
     body: (
-      <div className="code" key={"About"}>
+      <div>
         <p className="textYellow">## MyProfile</p>
         <br />
         <p>Name: 西村 爽(Sou Nishimura)</p>
@@ -301,9 +292,8 @@ export const Codes = [
   {
     name: "Contact",
     info: `${WELCOME}¥Contact`,
-    number: 7,
     body: (
-      <div className="code" key={"Contact"}>
+      <div>
         <p className="textYellow">## Contact</p>
         <br />
         <p>wantedlyもしくはメールアドレスからお問い合わせください。</p>
