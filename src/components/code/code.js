@@ -15,15 +15,16 @@ function Code(props) {
     <div className={"codeContainer"}>
       {Codes.map(code => {
         if (code.name === codeState) {
-          const Numbers = Array.from(Array(code.number).keys());
+          const elements = code.body.props.children;
           return (
             <React.Fragment key={codeState}>
-              <ul className="number">
-                {Numbers.map(number => {
-                  return <li key={number + 1}>{number + 1}</li>;
-                })}
-              </ul>
-              {code.body}
+              {elements.map((element, i) => (
+                <div className="code" key={i}>
+                  <span className="number">{i}</span>
+                  {element}
+                </div>
+              ))}
+              <span className="number">{elements.length}</span>
             </React.Fragment>
           );
         }
